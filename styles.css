@@ -340,6 +340,87 @@ a:focus-visible {
 }
 
 /* ==========================================================================
+   Google Play Store Button Badge Component
+   ========================================================================== */
+.button-playstore {
+  align-items: center;
+  background: #0a1726;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 12px;
+  box-shadow: 0 10px 24px rgba(7, 27, 52, 0.28);
+  color: #ffffff;
+  display: inline-flex;
+  gap: 0.85rem;
+  min-height: 50px;
+  padding: 0.55rem 1.25rem;
+  text-decoration: none;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+  user-select: none;
+}
+
+.button-playstore:hover,
+.button-playstore:focus-visible {
+  background: #0e2238;
+  border-color: rgba(35, 195, 174, 0.6);
+  box-shadow: 0 14px 32px rgba(7, 27, 52, 0.38), 0 0 0 1px rgba(35, 195, 174, 0.4);
+  color: #ffffff;
+  outline: none;
+  transform: translateY(-2px);
+}
+
+.button-playstore:active {
+  transform: translateY(0);
+  box-shadow: 0 6px 16px rgba(7, 27, 52, 0.25);
+}
+
+.playstore-icon {
+  flex-shrink: 0;
+  height: 26px;
+  width: 26px;
+}
+
+.button-playstore-copy {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+  text-align: left;
+}
+
+.button-playstore-kicker {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.button-playstore-title {
+  color: #ffffff;
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.button-playstore-lg {
+  min-height: 56px;
+  padding: 0.7rem 1.6rem;
+}
+
+.button-playstore-lg .playstore-icon {
+  height: 30px;
+  width: 30px;
+}
+
+.button-playstore-lg .button-playstore-kicker {
+  font-size: 0.68rem;
+}
+
+.button-playstore-lg .button-playstore-title {
+  font-size: 1.18rem;
+}
+
+/* ==========================================================================
    Main Layout & Typography
    ========================================================================== */
 main {
@@ -845,6 +926,94 @@ main {
 }
 
 /* ==========================================================================
+   Showcase Download Bar & Total Downloads Counter
+   ========================================================================== */
+.showcase-download-bar {
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 16px 38px rgba(7, 27, 52, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin: 2.8rem auto 0;
+  max-width: 860px;
+  padding: clamp(1.2rem, 2.5vw, 1.6rem) clamp(1.4rem, 3vw, 2.2rem);
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.showcase-download-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.download-metric-group {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.metric-badge-icon {
+  align-items: center;
+  background: rgba(35, 195, 174, 0.14);
+  border: 1px solid rgba(35, 195, 174, 0.3);
+  border-radius: 12px;
+  color: var(--accent-strong);
+  display: flex;
+  font-size: 1.35rem;
+  height: 46px;
+  justify-content: center;
+  width: 46px;
+  flex-shrink: 0;
+}
+
+.metric-copy {
+  display: flex;
+  flex-direction: column;
+}
+
+.metric-downloads {
+  color: var(--text-primary);
+  font-size: clamp(1.2rem, 2.5vw, 1.45rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.metric-sublabel {
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+  font-weight: 500;
+}
+
+.download-specs-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.download-specs-pills span {
+  background: var(--surface-muted);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-full);
+  color: var(--text-secondary);
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.2rem 0.65rem;
+}
+
+.showcase-download-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* ==========================================================================
    HOMEPAGE: Secondary Screenshot Gallery (Clean White Background)
    ========================================================================== */
 .gallery-section {
@@ -1083,6 +1252,40 @@ main {
   justify-content: center;
   color: var(--text-muted);
   font-size: 0.9rem;
+}
+
+.cta-download-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.85rem;
+  width: 100%;
+}
+
+.cta-stat-pill {
+  align-items: center;
+  background: rgba(35, 195, 174, 0.1);
+  border: 1px solid rgba(35, 195, 174, 0.25);
+  border-radius: var(--radius-full);
+  color: var(--text-primary);
+  display: inline-flex;
+  font-size: 0.88rem;
+  font-weight: 600;
+  gap: 0.45rem;
+  padding: 0.35rem 0.95rem;
+}
+
+.cta-stat-pill .stat-star {
+  color: #f59e0b;
+  font-size: 0.95rem;
+}
+
+.cta-secondary-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-top: 0.25rem;
 }
 
 /* ==========================================================================
@@ -1901,6 +2104,32 @@ tbody tr:hover {
   }
 
   .button {
+    width: 100%;
+  }
+
+  .button-playstore {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .showcase-download-bar {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+    padding: 1.35rem 1.1rem;
+  }
+
+  .download-metric-group {
+    justify-content: center;
+    text-align: left;
+  }
+
+  .download-specs-pills {
+    justify-content: center;
+  }
+
+  .showcase-download-actions {
+    justify-content: center;
     width: 100%;
   }
 
