@@ -1,5 +1,6 @@
 import fs from "node:fs/promises";
 import path from "node:path";
+import { spawn } from "node:child_process";
 
 const ROOT = import.meta.dirname;
 const OUT_DIR = path.join(import.meta.dirname, "screenshots");
@@ -194,10 +195,46 @@ const demoSnapshot = {
     analyticsEnabled: false,
     diagnosticsEnabled: false,
     adsPersonalizationConsent: false,
+    hasCompletedTutorial: true,
     privacyAcknowledgedAt: new Date().toISOString(),
     aiDisclaimerAcceptedAt: new Date().toISOString(),
   },
 };
+
+function delay(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+async function ensureChrome() {
+  try {
+    const res = await fetch(`${CDP_BASE}/json/version`);
+    if (res.ok) return null;
+  } catch {}
+
+  console.log("Launching headless Chrome for screenshot capture...");
+  const chromePath = "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe";
+  const tmpDir = path.join(ROOT, ".tmp-chrome-cdp");
+  const proc = spawn(chromePath, [
+    "--headless=new",
+    `--remote-debugging-port=${CDP_PORT}`,
+    `--remote-debugging-address=127.0.0.1`,
+    `--user-data-dir=${tmpDir}`,
+    "--window-size=430,932",
+    "about:blank",
+  ]);
+
+  for (let i = 0; i < 40; i++) {
+    await delay(300);
+    try {
+      const res = await fetch(`${CDP_BASE}/json/version`);
+      if (res.ok) {
+        console.log("Connected to Chrome CDP successfully.");
+        return proc;
+      }
+    } catch {}
+  }
+  throw new Error("Could not start Chrome with CDP on port " + CDP_PORT);
+}
 
 function connect(wsUrl) {
   const ws = new WebSocket(wsUrl);
@@ -233,10 +270,6 @@ async function createTarget() {
   const response = await fetch(`${CDP_BASE}/json/new?${encodeURIComponent("about:blank")}`, { method: "PUT" });
   if (!response.ok) throw new Error(`Could not create Chrome target: ${response.status}`);
   return response.json();
-}
-
-function delay(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 async function createPage({ demo }) {
@@ -285,46 +318,6 @@ async function navigateAndWait(client, url, textProbe) {
   throw new Error(`Timed out waiting for ${textProbe} at ${url}`);
 }
 
-async function clickText(client, text) {
-  const result = await client.send("Runtime.evaluate", {
-    expression: `(() => {
-      const targetText = ${JSON.stringify(text)};
-      const visible = (node) => {
-        const rect = node.getBoundingClientRect();
-        return rect.width > 0 && rect.height > 0;
-      };
-      const nodes = [...document.querySelectorAll("*")].filter((node) => (node.innerText || node.textContent || "").trim().includes(targetText) && visible(node));
-      const node = nodes[nodes.length - 1];
-      if (!node) return false;
-      node.click();
-      return true;
-    })()`,
-    returnByValue: true,
-  });
-  await delay(1600);
-  return Boolean(result.result?.value);
-}
-
-async function clickLabel(client, label) {
-  const result = await client.send("Runtime.evaluate", {
-    expression: `(() => {
-      const targetLabel = ${JSON.stringify(label)};
-      const visible = (node) => {
-        const rect = node.getBoundingClientRect();
-        return rect.width > 0 && rect.height > 0;
-      };
-      const nodes = [...document.querySelectorAll("[aria-label]")].filter((node) => node.getAttribute("aria-label") === targetLabel && visible(node));
-      const node = nodes[nodes.length - 1];
-      if (!node) return false;
-      node.click();
-      return true;
-    })()`,
-    returnByValue: true,
-  });
-  await delay(1800);
-  return Boolean(result.result?.value);
-}
-
 async function scrollDown(client, amount = 650) {
   await client.send("Runtime.evaluate", {
     expression: `(() => {
@@ -338,24 +331,6 @@ async function scrollDown(client, amount = 650) {
     })()`,
   });
   await delay(900);
-}
-
-async function waitForText(client, textProbe) {
-  const start = Date.now();
-  while (Date.now() - start < 30000) {
-    await delay(700);
-    const result = await client
-      .send("Runtime.evaluate", {
-        expression: `document.body && document.body.innerText.includes(${JSON.stringify(textProbe)})`,
-        returnByValue: true,
-      })
-      .catch(() => ({ result: { value: false } }));
-    if (result.result?.value) {
-      await delay(1200);
-      return;
-    }
-  }
-  throw new Error(`Timed out waiting for ${textProbe}`);
 }
 
 async function screenshot(client, filename) {
@@ -375,51 +350,83 @@ async function captureOne(config) {
   const client = await createPage({ demo: config.demo });
   try {
     await navigateAndWait(client, config.url, config.probe);
-    if (config.click) await clickText(client, config.click);
     return await screenshot(client, config.file);
   } finally {
     client.close();
   }
 }
 
-await fs.mkdir(OUT_DIR, { recursive: true });
+const chromeProc = await ensureChrome();
 
-const captures = [];
-captures.push(await captureOne({ demo: false, url: BASE_URL, probe: "Set up your owner profile", file: "01-onboarding-login.png" }));
-
-const app = await createPage({ demo: true });
 try {
-  await navigateAndWait(app, BASE_URL, "Featured Pet");
-  captures.push(await screenshot(app, "02-dashboard.png"));
+  await fs.mkdir(OUT_DIR, { recursive: true });
 
-  if (!(await clickLabel(app, "Pets"))) throw new Error("Could not open Pets tab.");
-  await waitForText(app, "My Pets");
-  captures.push(await screenshot(app, "03-my-pets.png"));
+  const captures = [];
 
-  if (!(await clickLabel(app, "Records"))) throw new Error("Could not open Records tab.");
-  await waitForText(app, "Records");
-  captures.push(await screenshot(app, "04-records.png"));
+  // 1. Onboarding
+  console.log("Capturing 01-onboarding-login.png...");
+  captures.push(await captureOne({
+    demo: false,
+    url: BASE_URL,
+    probe: "Owner details",
+    file: "01-onboarding-login.png",
+  }));
 
-  if (!(await clickLabel(app, "AI"))) throw new Error("Could not open AI tab.");
-  await waitForText(app, "AI");
-  captures.push(await screenshot(app, "05-ai-assistant.png"));
+  // 2. Dashboard
+  console.log("Capturing 02-dashboard.png...");
+  const dashboardPage = await createPage({ demo: true });
+  try {
+    await navigateAndWait(dashboardPage, BASE_URL, "Featured Pet");
+    captures.push(await screenshot(dashboardPage, "02-dashboard.png"));
+  } finally {
+    dashboardPage.close();
+  }
+
+  // 3. My Pets
+  console.log("Capturing 03-my-pets.png...");
+  const petsPage = await createPage({ demo: true });
+  try {
+    await navigateAndWait(petsPage, `${BASE_URL}/more/pets`, "Buddy");
+    captures.push(await screenshot(petsPage, "03-my-pets.png"));
+  } finally {
+    petsPage.close();
+  }
+
+  // 4. Records
+  console.log("Capturing 04-records.png...");
+  const recordsPage = await createPage({ demo: true });
+  try {
+    await navigateAndWait(recordsPage, `${BASE_URL}/more/records`, "Deworming");
+    captures.push(await screenshot(recordsPage, "04-records.png"));
+  } finally {
+    recordsPage.close();
+  }
+
+  // 5. AI Assistant
+  console.log("Capturing 05-ai-assistant.png...");
+  const aiPage = await createPage({ demo: true });
+  try {
+    await navigateAndWait(aiPage, `${BASE_URL}/ai-assistant`, "Start Consultation");
+    captures.push(await screenshot(aiPage, "05-ai-assistant.png"));
+  } finally {
+    aiPage.close();
+  }
+
+  // 6. Settings & Privacy Controls
+  console.log("Capturing 06-settings-privacy-controls.png...");
+  const settingsPage = await createPage({ demo: true });
+  try {
+    await navigateAndWait(settingsPage, `${BASE_URL}/more/settings`, "App Preferences");
+    await scrollDown(settingsPage, 500);
+    captures.push(await screenshot(settingsPage, "06-settings-privacy-controls.png"));
+  } finally {
+    settingsPage.close();
+  }
+
+  console.table(captures);
+  console.log(`Saved screenshots to ${path.relative(ROOT, OUT_DIR)}`);
 } finally {
-  app.close();
+  if (chromeProc) {
+    chromeProc.kill();
+  }
 }
-
-const settings = await createPage({ demo: true });
-try {
-  await navigateAndWait(settings, BASE_URL, "Featured Pet");
-  if (!(await clickLabel(settings, "Open settings"))) throw new Error("Could not open settings.");
-  await waitForText(settings, "Settings");
-  await scrollDown(settings, 720);
-  await clickText(settings, "Legal & Privacy");
-  await waitForText(settings, "Privacy Policy");
-  await scrollDown(settings, 180);
-  captures.push(await screenshot(settings, "06-settings-privacy-controls.png"));
-} finally {
-  settings.close();
-}
-
-console.table(captures);
-console.log(`Saved screenshots to ${path.relative(ROOT, OUT_DIR)}`);
