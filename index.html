@@ -136,21 +136,34 @@
           </div>
         </div>
 
-        <div class="hero-visual" aria-label="PetNexa AI application overview">
+        <div class="hero-visual" aria-label="PetNexa AI application live preview">
           <div class="device-showcase">
             <figure class="phone-frame">
-              <img
-                src="./screenshots/02-dashboard.png"
+              <video
+                src="./live-app-preview.mp4"
+                poster="./screenshots/02-dashboard.png"
+                autoplay
+                loop
+                muted
+                playsinline
                 width="430"
                 height="932"
-                loading="eager"
-                decoding="async"
-                alt="PetNexa AI Care Dashboard showing daily routine reminders, stats, and quick actions."
-              />
+                aria-label="Live animated preview of PetNexa AI from splash screen through app screen features"
+              >
+                <source src="./live-app-preview.mp4" type="video/mp4" />
+                <source src="./live-app-preview.webm" type="video/webm" />
+                <img
+                  src="./screenshots/02-dashboard.png"
+                  width="430"
+                  height="932"
+                  alt="PetNexa AI Care Dashboard showing daily routine reminders, stats, and quick actions."
+                />
+              </video>
             </figure>
             <div class="showcase-note">
+              <span class="live-dot" aria-hidden="true"></span>
               <strong>Live App Preview</strong>
-              <span>Sample demo data only. No real personal records.</span>
+              <span>Splash &amp; feature walkthrough · Demo data</span>
             </div>
           </div>
         </div>
