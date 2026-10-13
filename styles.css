@@ -546,35 +546,6 @@ main {
   font-weight: 700;
 }
 
-/* Hero Feature Highlights */
-.hero-highlights {
-  display: grid;
-  gap: 0.75rem;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.hero-highlight-card {
-  background: rgba(255, 255, 255, 0.9);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-sm);
-  padding: 0.95rem 1.1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-}
-
-.hero-highlight-card strong {
-  color: var(--text-primary);
-  font-size: 0.92rem;
-  font-weight: 700;
-}
-
-.hero-highlight-card span {
-  color: var(--text-secondary);
-  font-size: 0.82rem;
-  line-height: 1.45;
-}
 
 /* Hero Visual / Mockup Frame */
 .hero-visual {
@@ -1079,59 +1050,6 @@ main {
   line-height: 1.5;
 }
 
-/* ==========================================================================
-   HOMEPAGE: Section 4 — How PetNexa AI Works
-   ========================================================================== */
-.steps-section {
-  padding: clamp(3rem, 5vw, 5rem) 0;
-  border-top: 1px solid var(--border-subtle);
-}
-
-.steps-grid {
-  display: grid;
-  gap: 1.5rem;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-}
-
-.step-card {
-  background: var(--surface);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-sm);
-  padding: 1.5rem 1.25rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.85rem;
-  position: relative;
-}
-
-.step-number {
-  background: var(--surface-strong);
-  color: var(--accent-color);
-  font-family: var(--font-mono);
-  font-size: 0.85rem;
-  font-weight: 800;
-  width: 36px;
-  height: 36px;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.step-card h3 {
-  color: var(--text-primary);
-  font-size: 1.12rem;
-  font-weight: 800;
-  margin: 0;
-}
-
-.step-card p {
-  color: var(--text-secondary);
-  font-size: 0.92rem;
-  line-height: 1.58;
-  margin: 0;
-}
 
 /* ==========================================================================
    HOMEPAGE: Section 5 — Privacy & Trust by Design
@@ -2052,9 +1970,6 @@ tbody tr:hover {
     grid-template-columns: 1fr;
   }
 
-  .steps-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
 
   .gallery-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -2084,14 +1999,9 @@ tbody tr:hover {
     transform: none;
   }
 
-  .steps-grid,
   .gallery-grid,
   .trust-pillars,
   .data-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .hero-highlights {
     grid-template-columns: 1fr;
   }
 
