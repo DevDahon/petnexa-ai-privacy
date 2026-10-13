@@ -10,7 +10,6 @@ const SITE_CONFIG = {
   contactEmail: "leaves018@gmail.com",
   developerName: "Dahon",
   appVersion: "1.0.6 (Build 6)",
-  totalDownloads: "100+ Downloads",
   playStoreUrl: "https://play.google.com/store/apps/details?id=com.iterablueprints.petnexaai",
 };
 
@@ -36,10 +35,6 @@ function applyPolicyConfig() {
 
   document.querySelectorAll("[data-app-version]").forEach((el) => {
     el.textContent = SITE_CONFIG.appVersion;
-  });
-
-  document.querySelectorAll("[data-total-downloads]").forEach((el) => {
-    el.textContent = SITE_CONFIG.totalDownloads;
   });
 
   document.querySelectorAll("[data-contact-link]").forEach((el) => {
