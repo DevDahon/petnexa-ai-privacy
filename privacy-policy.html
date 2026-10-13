@@ -421,7 +421,9 @@
               <div class="data-card">
                 <h3>AI Consultation &amp; OCR Payloads</h3>
                 <p>
-                  Zero retention by AI providers. Consultation inputs and OCR document images are processed ephemerally in RAM and discarded immediately upon response completion.
+                  Processed ephemerally with zero data retention for AI model training. Consultation inputs and OCR document images
+                  are not retained in long-term application storage and are never used to train public foundation models. Inference providers
+                  (Google Gemini, Groq) process requests per standard developer API terms, discarding payloads after response completion.
                 </p>
               </div>
               <div class="data-card">
