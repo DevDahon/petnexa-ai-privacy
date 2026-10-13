@@ -1,12 +1,18 @@
 const SITE_CONFIG = {
   effectiveDate: "June 20, 2026",
-  contactEmail: "leaves0819@gmail.com",
+  lastUpdated: "October 13, 2026",
+  contactEmail: "leaves018@gmail.com",
   developerName: "Dahon",
+  appVersion: "1.0.6 (Build 6)",
 };
 
 function applyPolicyConfig() {
   document.querySelectorAll("[data-effective-date]").forEach((node) => {
     node.textContent = SITE_CONFIG.effectiveDate;
+  });
+
+  document.querySelectorAll("[data-last-updated]").forEach((node) => {
+    node.textContent = SITE_CONFIG.lastUpdated;
   });
 
   document.querySelectorAll("[data-developer-name]").forEach((node) => {
@@ -17,22 +23,25 @@ function applyPolicyConfig() {
     node.textContent = SITE_CONFIG.contactEmail;
   });
 
+  document.querySelectorAll("[data-app-version]").forEach((node) => {
+    node.textContent = SITE_CONFIG.appVersion;
+  });
+
   document.querySelectorAll("[data-contact-link]").forEach((node) => {
     node.setAttribute("href", `mailto:${SITE_CONFIG.contactEmail}`);
   });
 }
 
 function setupActiveNavState() {
-  const links = [...document.querySelectorAll(".nav-link")];
-  const sectionEntries =
-    links
-      .map((link) => {
-        const id = link.getAttribute("href");
-        if (!id?.startsWith("#")) return null;
-        const section = document.querySelector(id);
-        return section ? { id, link, section } : null;
-      })
-      .filter(Boolean);
+  const links = [...document.querySelectorAll(".site-header .nav-link")];
+  const sectionEntries = links
+    .map((link) => {
+      const id = link.getAttribute("href");
+      if (!id?.startsWith("#")) return null;
+      const section = document.querySelector(id);
+      return section ? { id, link, section } : null;
+    })
+    .filter(Boolean);
 
   if (!sectionEntries.length) return;
 
