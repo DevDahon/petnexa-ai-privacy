@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PetNexa AI - Account &amp; Data Deletion Center</title>
+    <meta
+      name="description"
+      content="Official instructions for deleting your PetNexa AI account, cloud records, and local device data. Compliant with Google Play Data Safety and GDPR/CCPA regulations."
+    />
+    <link rel="canonical" href="https://devdahon.github.io/petnexa-ai-privacy/account-deletion.html" />
+    <meta name="theme-color" content="#071b34" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="PetNexa AI - Account &amp; Data Deletion Center" />
+    <meta
+      property="og:description"
+      content="Official instructions for deleting your PetNexa AI account, cloud records, and local device data."
+    />
+    <meta property="og:url" content="https://devdahon.github.io/petnexa-ai-privacy/account-deletion.html" />
+    <meta property="og:image" content="https://devdahon.github.io/petnexa-ai-privacy/image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="PetNexa AI - Account &amp; Data Deletion Center" />
+    <meta
+      name="twitter:description"
+      content="Official instructions for deleting your PetNexa AI account, cloud records, and local device data."
+    />
+    <meta name="twitter:image" content="https://devdahon.github.io/petnexa-ai-privacy/image.png" />
+    <link rel="icon" type="image/png" href="./image.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- SITE HEADER -->
+    <header class="site-header">
+      <a class="brand" href="./index.html" aria-label="PetNexa AI home">
+        <span class="brand-logo-frame" aria-hidden="true">
+          <img src="./image.png" alt="" class="brand-logo" width="44" height="44" />
+        </span>
+        <span class="brand-copy">
+          <span class="brand-name">PetNexa AI</span>
+          <span class="brand-sub">Privacy &amp; Safety</span>
+        </span>
+      </a>
+
+      <nav id="nav-menu" class="nav-menu" aria-label="Primary Navigation">
+        <a href="./index.html" class="nav-link">Home</a>
+        <a href="./privacy-policy.html" class="nav-link">Privacy Policy</a>
+        <a href="./account-deletion.html" class="nav-link is-active" aria-current="page">Account Deletion</a>
+        <a href="./support.html" class="nav-link">Support</a>
+        <a href="./index.html#showcase" class="button button-accent nav-cta">View App</a>
+      </nav>
+
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-label="Toggle navigation menu"
+        aria-expanded="false"
+        aria-controls="nav-menu"
+      >
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+    </header>
+
+    <main id="main-content">
+      <!-- HERO -->
+      <div class="deletion-hero">
+        <p class="eyebrow">
+          <span class="eyebrow-pill">User Rights &amp; Google Play Compliance</span>
+        </p>
+        <h1>PetNexa AI Account &amp; Data Deletion Center</h1>
+        <p>
+          We believe you should have complete control over your personal and pet health information.
+          In compliance with Google Play Developer policies, the General Data Protection Regulation (GDPR), and CCPA,
+          this page explains the exact procedures for deleting your account, cloud records, and local device data.
+        </p>
+      </div>
+
+      <!-- DELETION METHODS GRID -->
+      <div class="deletion-grid">
+        <!-- METHOD 1: IN-APP -->
+        <article class="deletion-method-card primary">
+          <div class="deletion-method-header">
+            <h3>Method 1: In-App Self-Service Deletion</h3>
+            <span class="deletion-speed-tag">Instant Purge</span>
+          </div>
+          <p>
+            The fastest and most direct method. If you still have the PetNexa AI mobile application installed on your device,
+            you can trigger an immediate deletion without waiting for manual processing:
+          </p>
+
+          <div class="step-list">
+            <div class="step-item">
+              <span class="step-item-num">1</span>
+              <div>Open the <strong>PetNexa AI</strong> mobile application on your device.</div>
+            </div>
+            <div class="step-item">
+              <span class="step-item-num">2</span>
+              <div>Tap the <strong>More</strong> tab in the bottom navigation bar and select <strong>Settings</strong>.</div>
+            </div>
+            <div class="step-item">
+              <span class="step-item-num">3</span>
+              <div>Scroll down to the <strong>Data &amp; Cloud Sync</strong> section.</div>
+            </div>
+            <div class="step-item">
+              <span class="step-item-num">4</span>
+              <div>
+                <strong>For Cloud Accounts (Household Sync):</strong> Tap <strong style="color: var(--danger-color);">Delete PetNexa Account</strong>.<br />
+                <strong>For Offline Solo Users:</strong> Tap <strong style="color: var(--danger-color);">Clear Local Device Data</strong> to wipe your local SQLite database.
+              </div>
+            </div>
+            <div class="step-item">
+              <span class="step-item-num">5</span>
+              <div>Confirm the deletion prompt dialog.</div>
+            </div>
+          </div>
+
+          <div class="callout-box success">
+            <h4>Immediate Processing</h4>
+            <p>
+              In-app deletion invokes an immediate server-side Supabase RPC function that deletes your authentication identity,
+              revokes all session tokens, and permanently deletes all pet records belonging to your household.
+            </p>
+          </div>
+        </article>
+
+        <!-- METHOD 2: EXTERNAL REQUEST -->
+        <article class="deletion-method-card">
+          <div class="deletion-method-header">
+            <h3>Method 2: External Email Deletion Request</h3>
+            <span class="deletion-speed-tag" style="background: var(--info-soft); color: var(--info-color);">Within 30 Days</span>
+          </div>
+          <p>
+            If you have uninstalled the application, lost access to your mobile device, or prefer to submit a manual deletion request,
+            you can email our support team directly:
+          </p>
+
+          <div class="step-list">
+            <div class="step-item">
+              <span class="step-item-num">1</span>
+              <div>
+                Send an email to: <a href="mailto:leaves018@gmail.com" data-contact-link><strong>leaves018@gmail.com</strong></a>
+              </div>
+            </div>
+            <div class="step-item">
+              <span class="step-item-num">2</span>
+              <div>
+                Use the subject line: <code>[PetNexa Account Deletion Request]</code>
+              </div>
+            </div>
+            <div class="step-item">
+              <span class="step-item-num">3</span>
+              <div>
+                Include your <strong>Registered Account Email</strong> (the email address used for Household Sync OTP or Google sign-in)
+                and your <strong>Owner Display Name</strong>.
+              </div>
+            </div>
+            <div class="step-item">
+              <span class="step-item-num">4</span>
+              <div>
+                Include the explicit confirmation statement: <em>"I request the permanent deletion of my PetNexa AI account and all associated cloud data."</em>
+              </div>
+            </div>
+          </div>
+
+          <div class="callout-box warning">
+            <h4>Ownership Verification &amp; SLA</h4>
+            <p>
+              To protect against unauthorized deletion, we will send a confirmation reply to the registered email address.
+              Once confirmed, your account and cloud data will be permanently wiped within <strong>30 calendar days</strong>
+              (typically completed within 72 business hours).
+            </p>
+          </div>
+        </article>
+      </div>
+
+      <!-- DATA BREAKDOWN TABLE -->
+      <section class="doc-section" aria-labelledby="breakdown-title">
+        <h2 id="breakdown-title">What Data Is Deleted vs. Retained</h2>
+        <p>
+          Transparency is critical. When you initiate an account or data deletion, here is how each category of information is treated:
+        </p>
+
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>Data Category</th>
+                <th>Storage Location</th>
+                <th>Deletion Action</th>
+                <th>Timeline</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>User Account &amp; Auth Tokens</strong></td>
+                <td>Supabase Authentication</td>
+                <td>Permanently deleted; auth UID purged</td>
+                <td>Immediate (in-app) / 30 days (email)</td>
+              </tr>
+              <tr>
+                <td><strong>Household Memberships &amp; Invites</strong></td>
+                <td>Supabase PostgreSQL</td>
+                <td>Permanently revoked and purged</td>
+                <td>Immediate (in-app) / 30 days (email)</td>
+              </tr>
+              <tr>
+                <td><strong>Cloud Pet Profiles &amp; Notes</strong></td>
+                <td>Supabase PostgreSQL</td>
+                <td>Permanently wiped via Row Level Security cascade</td>
+                <td>Immediate (in-app) / 30 days (email)</td>
+              </tr>
+              <tr>
+                <td><strong>Medical Records &amp; Reminders</strong></td>
+                <td>Supabase PostgreSQL</td>
+                <td>Permanently deleted</td>
+                <td>Immediate (in-app) / 30 days (email)</td>
+              </tr>
+              <tr>
+                <td><strong>Uploaded Photos &amp; Document Crops</strong></td>
+                <td>Supabase Private Storage Buckets</td>
+                <td>Permanently purged from storage buckets</td>
+                <td>Immediate (in-app) / 30 days (email)</td>
+              </tr>
+              <tr>
+                <td><strong>Local Device Database</strong></td>
+                <td>Device Physical SQLite Sandboxed File</td>
+                <td>Wiped immediately when tapping "Clear Local Device Data" or uninstalling app</td>
+                <td>Immediate (on-device)</td>
+              </tr>
+              <tr>
+                <td><strong>Google AdMob Telemetry</strong></td>
+                <td>Google Advertising Servers</td>
+                <td>Non-identifying ad logs expire per Google's standard retention (up to 30 days)</td>
+                <td>Automatic expiration</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- PRE-DELETION BACKUP ADVICE -->
+      <section class="doc-section" aria-labelledby="backup-title">
+        <h2 id="backup-title">Important: Export Your Records Before Deletion</h2>
+        <p>
+          Account and data deletion is <strong>irreversible</strong>. Once executed, your synchronized pet profiles,
+          vaccination records, and weight logs cannot be restored.
+        </p>
+        <p>
+          If you wish to retain an offline record of your pet's medical history for your personal records or veterinary visits,
+          we strongly recommend exporting a portable JSON backup prior to deletion:
+        </p>
+
+        <div class="callout-box success">
+          <h4>How to Export Your Pet Health Records</h4>
+          <p>
+            1. Open PetNexa AI &rarr; tap <strong>More</strong> &rarr; <strong>Settings</strong>.<br />
+            2. Scroll down to <strong>Data &amp; Cloud Sync</strong>.<br />
+            3. Tap <strong>Backup &amp; Restore (JSON)</strong>.<br />
+            4. Tap <strong>Export Data</strong> to save or share your complete JSON v2 health file.
+          </p>
+        </div>
+      </section>
+
+      <!-- CONTACT FOR ASSISTANCE -->
+      <section class="doc-section" aria-labelledby="help-title">
+        <h2 id="help-title">Need Assistance?</h2>
+        <p>
+          If you encounter any issues deleting your account or need verification of your deletion request,
+          please contact our support team directly at:
+        </p>
+        <p>
+          <strong>Official Support Email:</strong>
+          <a href="mailto:leaves018@gmail.com" data-contact-link>leaves018@gmail.com</a>
+        </p>
+        <p>
+          You can also review our full <a href="./privacy-policy.html"><strong>Privacy Policy</strong></a> or visit our <a href="./support.html"><strong>Support Center</strong></a>.
+        </p>
+      </section>
+    </main>
+
+    <!-- GLOBAL SITE FOOTER -->
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a class="brand" href="./index.html" aria-label="PetNexa AI home">
+              <span class="brand-logo-frame" aria-hidden="true">
+                <img src="./image.png" alt="" class="brand-logo" width="44" height="44" />
+              </span>
+              <span class="brand-copy">
+                <span class="brand-name">PetNexa AI</span>
+                <span class="brand-sub">Privacy &amp; Safety</span>
+              </span>
+            </a>
+            <p>
+              Official Account &amp; Data Deletion Center for PetNexa AI.
+            </p>
+          </div>
+
+          <div class="footer-col">
+            <h4>Website</h4>
+            <ul>
+              <li><a href="./index.html">Home</a></li>
+              <li><a href="./index.html#features">Key Features</a></li>
+              <li><a href="./index.html#showcase">App Showcase</a></li>
+              <li><a href="./index.html#how-it-works">How It Works</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Legal &amp; Privacy</h4>
+            <ul>
+              <li><a href="./privacy-policy.html">Privacy Policy</a></li>
+              <li><a href="./account-deletion.html">Account &amp; Data Deletion</a></li>
+              <li><a href="./privacy-policy.html#play-data-safety">Google Play Data Safety</a></li>
+              <li><a href="./privacy-policy.html#terms-of-service">Terms of Service</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Support</h4>
+            <ul>
+              <li><a href="./support.html">Help Center &amp; FAQs</a></li>
+              <li><a href="./support.html#troubleshooting">Troubleshooting</a></li>
+              <li><a href="mailto:leaves018@gmail.com">Contact Support</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2026 PetNexa AI. Developed by <span data-developer-name>Dahon</span>. All rights reserved.</p>
+          <p>
+            Official Support:
+            <a href="mailto:leaves018@gmail.com" data-contact-link>leaves018@gmail.com</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

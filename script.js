@@ -1,3 +1,9 @@
+/**
+ * PetNexa AI — Master Script
+ * Multi-page navigation, accessible mobile drawer, dynamic config,
+ * interactive mobile showcase tabs, and hash backward-compatibility.
+ */
+
 const SITE_CONFIG = {
   effectiveDate: "June 20, 2026",
   lastUpdated: "October 13, 2026",
@@ -6,116 +12,203 @@ const SITE_CONFIG = {
   appVersion: "1.0.6 (Build 6)",
 };
 
+/**
+ * Populate dynamic site metadata placeholders
+ */
 function applyPolicyConfig() {
-  document.querySelectorAll("[data-effective-date]").forEach((node) => {
-    node.textContent = SITE_CONFIG.effectiveDate;
+  document.querySelectorAll("[data-effective-date]").forEach((el) => {
+    el.textContent = SITE_CONFIG.effectiveDate;
   });
 
-  document.querySelectorAll("[data-last-updated]").forEach((node) => {
-    node.textContent = SITE_CONFIG.lastUpdated;
+  document.querySelectorAll("[data-last-updated]").forEach((el) => {
+    el.textContent = SITE_CONFIG.lastUpdated;
   });
 
-  document.querySelectorAll("[data-developer-name]").forEach((node) => {
-    node.textContent = SITE_CONFIG.developerName;
+  document.querySelectorAll("[data-developer-name]").forEach((el) => {
+    el.textContent = SITE_CONFIG.developerName;
   });
 
-  document.querySelectorAll("[data-contact-email]").forEach((node) => {
-    node.textContent = SITE_CONFIG.contactEmail;
+  document.querySelectorAll("[data-contact-email]").forEach((el) => {
+    el.textContent = SITE_CONFIG.contactEmail;
   });
 
-  document.querySelectorAll("[data-app-version]").forEach((node) => {
-    node.textContent = SITE_CONFIG.appVersion;
+  document.querySelectorAll("[data-app-version]").forEach((el) => {
+    el.textContent = SITE_CONFIG.appVersion;
   });
 
-  document.querySelectorAll("[data-contact-link]").forEach((node) => {
-    node.setAttribute("href", `mailto:${SITE_CONFIG.contactEmail}`);
+  document.querySelectorAll("[data-contact-link]").forEach((el) => {
+    el.setAttribute("href", `mailto:${SITE_CONFIG.contactEmail}`);
   });
 }
 
-function setupActiveNavState() {
-  const links = [...document.querySelectorAll(".site-header .nav-link")];
-  const sectionEntries = links
-    .map((link) => {
-      const id = link.getAttribute("href");
-      if (!id?.startsWith("#")) return null;
-      const section = document.querySelector(id);
-      return section ? { id, link, section } : null;
-    })
-    .filter(Boolean);
+/**
+ * Accessible Mobile Navigation Drawer
+ */
+function setupMobileNav() {
+  const header = document.querySelector(".site-header");
+  const toggleBtn = document.querySelector(".nav-toggle");
+  const navMenu = document.querySelector(".nav-menu");
 
-  if (!sectionEntries.length) return;
+  if (!header || !toggleBtn || !navMenu) return;
 
-  const syncActive = (activeId) => {
-    links.forEach((link) => {
-      const isActive = link.getAttribute("href") === activeId;
-      link.classList.toggle("is-active", isActive);
-      if (isActive) link.setAttribute("aria-current", "true");
-      else link.removeAttribute("aria-current");
+  function closeMenu() {
+    header.classList.remove("is-menu-open");
+    toggleBtn.setAttribute("aria-expanded", "false");
+    document.body.style.overflow = "";
+  }
+
+  function openMenu() {
+    header.classList.add("is-menu-open");
+    toggleBtn.setAttribute("aria-expanded", "true");
+  }
+
+  toggleBtn.addEventListener("click", () => {
+    const isOpen = header.classList.contains("is-menu-open");
+    if (isOpen) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  });
+
+  // Close menu when clicking any nav link
+  navMenu.querySelectorAll(".nav-link").forEach((link) => {
+    link.addEventListener("click", closeMenu);
+  });
+
+  // Close menu on Escape key
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && header.classList.contains("is-menu-open")) {
+      closeMenu();
+      toggleBtn.focus();
+    }
+  });
+
+  // Close when clicking outside header
+  document.addEventListener("click", (e) => {
+    if (header.classList.contains("is-menu-open") && !header.contains(e.target)) {
+      closeMenu();
+    }
+  });
+}
+
+/**
+ * Interactive Mobile Tabs for 3-Phone Showcase
+ * Allows mobile visitors to toggle the featured screen on the primary mockup
+ */
+function setupShowcaseTabs() {
+  const tabs = document.querySelectorAll(".showcase-tab-btn");
+  const centerPhoneImg = document.querySelector("#center-phone-img");
+  const centerPhoneTitle = document.querySelector("#center-phone-title");
+  const centerPhoneDesc = document.querySelector("#center-phone-desc");
+
+  if (!tabs.length || !centerPhoneImg) return;
+
+  const screenData = {
+    dashboard: {
+      src: "./screenshots/02-dashboard.png",
+      alt: "PetNexa AI Care Dashboard showing daily routine reminders, stats, and quick actions.",
+      title: "Care Dashboard",
+      desc: "Daily overview with active pet status, due care items, and single-tap actions.",
+    },
+    records: {
+      src: "./screenshots/04-records.png",
+      alt: "PetNexa AI Health Records Vault with vaccination cards and AI OCR document scanning.",
+      title: "Clinical Records Vault",
+      desc: "Vaccination logs, clinic details, and offline medical history cards.",
+    },
+    ai: {
+      src: "./screenshots/05-ai-assistant.png",
+      alt: "PetNexa AI Symptom Assistant showing credit balance, robot guide, and triage intake.",
+      title: "AI Symptom Guidance",
+      desc: "3-step structured symptom evaluation with credit balance tracking.",
+    },
+  };
+
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      const key = tab.getAttribute("data-showcase-tab");
+      const target = screenData[key];
+      if (!target) return;
+
+      tabs.forEach((t) => t.classList.remove("is-active"));
+      tab.classList.add("is-active");
+
+      // Smooth switch
+      centerPhoneImg.style.opacity = "0.4";
+      setTimeout(() => {
+        centerPhoneImg.src = target.src;
+        centerPhoneImg.alt = target.alt;
+        if (centerPhoneTitle) centerPhoneTitle.textContent = target.title;
+        if (centerPhoneDesc) centerPhoneDesc.textContent = target.desc;
+        centerPhoneImg.style.opacity = "1";
+      }, 150);
     });
-  };
+  });
+}
 
-  let forcedActiveId = null;
-  let forcedActiveUntil = 0;
+/**
+ * Table of Contents Scroll-Spy for Privacy Policy Page
+ */
+function setupPolicyToc() {
+  const tocLinks = document.querySelectorAll(".policy-toc-link");
+  if (!tocLinks.length) return;
 
-  const getActiveId = () => {
-    if (forcedActiveId && Date.now() < forcedActiveUntil) return forcedActiveId;
-    forcedActiveId = null;
+  const sections = [];
+  tocLinks.forEach((link) => {
+    const id = link.getAttribute("href");
+    if (!id || !id.startsWith("#")) return;
+    const target = document.querySelector(id);
+    if (target) sections.push({ link, target });
+  });
 
-    const hashEntry = sectionEntries.find((entry) => entry.id === window.location.hash);
-    if (hashEntry) {
-      const rect = hashEntry.section.getBoundingClientRect();
-      if (rect.top < window.innerHeight && rect.bottom > 0) return hashEntry.id;
+  if (!sections.length) return;
+
+  function onScroll() {
+    const scrollPos = window.scrollY + 140;
+
+    let current = sections[0];
+    for (const section of sections) {
+      if (section.target.offsetTop <= scrollPos) {
+        current = section;
+      } else {
+        break;
+      }
     }
 
-    const offset = Math.min(window.innerHeight * 0.65, 520);
-    const viewportBottom = window.scrollY + window.innerHeight;
-    const documentBottom = document.documentElement.scrollHeight - 12;
-
-    if (viewportBottom >= documentBottom) {
-      return `#${sectionEntries[sectionEntries.length - 1].section.id}`;
-    }
-
-    let active = sectionEntries[0];
-    for (const entry of sectionEntries) {
-      if (entry.section.getBoundingClientRect().top <= offset) active = entry;
-      else break;
-    }
-    return `#${active.section.id}`;
-  };
-
-  let ticking = false;
-  const updateActiveFromScroll = () => {
-    if (ticking) return;
-    ticking = true;
-    window.requestAnimationFrame(() => {
-      syncActive(getActiveId());
-      ticking = false;
-    });
-  };
-
-  for (const { id, link } of sectionEntries) {
-    link.addEventListener("click", () => {
-      forcedActiveId = id;
-      forcedActiveUntil = Date.now() + 2200;
-      syncActive(id);
+    sections.forEach(({ link }) => {
+      link.classList.toggle("is-active", link === current.link);
     });
   }
 
-  syncActive(getActiveId());
-  window.addEventListener("scroll", updateActiveFromScroll, { passive: true });
-  window.addEventListener("resize", updateActiveFromScroll);
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+}
 
-  if (!("IntersectionObserver" in window)) return;
+/**
+ * Backward compatibility redirect for old anchor URLs
+ * If an external link arrives at index.html#account-deletion, redirect to account-deletion.html
+ */
+function handleHashRedirects() {
+  const hash = window.location.hash.toLowerCase();
+  const path = window.location.pathname.toLowerCase();
 
-  const observer = new IntersectionObserver(() => updateActiveFromScroll(), {
-    rootMargin: "-10% 0px -70% 0px",
-    threshold: [0, 0.25, 0.5, 1],
-  });
+  const isHome = path.endsWith("/") || path.endsWith("/index.html") || path.endsWith("privacy/");
 
-  for (const { section } of sectionEntries) {
-    observer.observe(section);
+  if (isHome) {
+    if (hash === "#account-deletion") {
+      window.location.replace("./account-deletion.html");
+    } else if (hash === "#privacy-policy" || hash === "#introduction" || hash === "#play-data-safety") {
+      window.location.replace(`./privacy-policy.html${hash}`);
+    }
   }
 }
 
-applyPolicyConfig();
-setupActiveNavState();
+// Initialize on DOM load
+document.addEventListener("DOMContentLoaded", () => {
+  applyPolicyConfig();
+  setupMobileNav();
+  setupShowcaseTabs();
+  setupPolicyToc();
+  handleHashRedirects();
+});

@@ -3,26 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PetNexa AI - Privacy Policy, Terms & Account Deletion Center</title>
+    <title>PetNexa AI - Intelligent Pet Care & Safety Companion</title>
     <meta
       name="description"
-      content="Official Privacy Policy, Terms of Service, and Account Deletion Center for PetNexa AI. Learn about our local-first architecture, ephemeral AI guidance, OCR document scanning, Find a Vet location privacy, Google Play Data Safety compliance, and user data controls."
+      content="PetNexa AI is a privacy-conscious companion for pet profiles, vaccination records, preventive care reminders, AI symptom guidance, and nearby veterinary clinic discovery."
     />
     <link rel="canonical" href="https://devdahon.github.io/petnexa-ai-privacy/" />
     <meta name="theme-color" content="#071b34" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="PetNexa AI - Privacy Policy, Terms & Account Deletion Center" />
+    <meta property="og:title" content="PetNexa AI - Intelligent Pet Care & Safety Companion" />
     <meta
       property="og:description"
-      content="Official Privacy Policy and Account Deletion Center for PetNexa AI. Local-first SQLite storage, ephemeral AI guidance, OCR document scanning, Google Play Data Safety, and user controls."
+      content="Local-first pet health dossier, ephemeral AI symptom triage, automated vaccination reminders, and verified emergency vet locator. Your data stays on your device."
     />
     <meta property="og:url" content="https://devdahon.github.io/petnexa-ai-privacy/" />
     <meta property="og:image" content="https://devdahon.github.io/petnexa-ai-privacy/image.png" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="PetNexa AI - Privacy Policy, Terms & Account Deletion Center" />
+    <meta name="twitter:title" content="PetNexa AI - Intelligent Pet Care & Safety Companion" />
     <meta
       name="twitter:description"
-      content="Official Privacy Policy and Account Deletion Center for PetNexa AI. Local-first SQLite storage, ephemeral AI guidance, OCR document scanning, Google Play Data Safety, and user controls."
+      content="Local-first pet health dossier, ephemeral AI symptom triage, automated vaccination reminders, and verified emergency vet locator."
     />
     <meta name="twitter:image" content="https://devdahon.github.io/petnexa-ai-privacy/image.png" />
     <link rel="icon" type="image/png" href="./image.png" />
@@ -36,1181 +36,567 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "PetNexa AI Privacy Policy & Terms",
-        "url": "https://devdahon.github.io/petnexa-ai-privacy/",
-        "description": "Privacy Center, Google Play Data Safety, and Account Deletion Policy for PetNexa AI, covering local-first pet care data, optional Household cloud sync, ephemeral AI guidance, OCR scanning, and user rights.",
-        "dateModified": "2026-10-13",
-        "publisher": {
-          "@type": "Organization",
-          "name": "PetNexa AI",
-          "email": "leaves018@gmail.com"
+        "@type": "SoftwareApplication",
+        "name": "PetNexa AI",
+        "applicationCategory": "HealthApplication",
+        "operatingSystem": "Android, iOS, Web",
+        "author": {
+          "@type": "Person",
+          "name": "Dahon"
         },
-        "about": {
-          "@type": "SoftwareApplication",
-          "name": "PetNexa AI",
-          "applicationCategory": "HealthApplication",
-          "operatingSystem": "iOS, Android, Web"
+        "description": "Intelligent pet health management and care companion mobile application with offline-first SQLite records, ephemeral AI symptom triage, and emergency veterinary locator.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
         }
       }
     </script>
   </head>
   <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- SITE HEADER -->
     <header class="site-header">
-      <a class="brand" href="#main-content" aria-label="PetNexa AI privacy home">
+      <a class="brand" href="./index.html" aria-label="PetNexa AI home">
         <span class="brand-logo-frame" aria-hidden="true">
-          <img src="./image.png" alt="" class="brand-logo" />
+          <img src="./image.png" alt="" class="brand-logo" width="44" height="44" />
         </span>
         <span class="brand-copy">
           <span class="brand-name">PetNexa AI</span>
-          <span class="brand-sub">Privacy & Safety Center</span>
+          <span class="brand-sub">Pet Care & Safety</span>
         </span>
       </a>
 
-      <nav class="nav-menu" aria-label="Primary Navigation">
-        <a href="#app-preview" class="nav-link">App Preview</a>
-        <a href="#introduction" class="nav-link">Policy</a>
-        <a href="#data-collected" class="nav-link">Data</a>
-        <a href="#ai-processing" class="nav-link">AI & Services</a>
-        <a href="#permissions" class="nav-link">Permissions</a>
-        <a href="#account-deletion" class="nav-link">Account Deletion</a>
-        <a href="#play-data-safety" class="nav-link">Play Safety</a>
-        <a href="#terms-of-service" class="nav-link">Terms</a>
-        <a href="#contact" class="nav-link">Contact</a>
+      <nav id="nav-menu" class="nav-menu" aria-label="Primary Navigation">
+        <a href="./index.html" class="nav-link is-active" aria-current="page">Home</a>
+        <a href="./privacy-policy.html" class="nav-link">Privacy Policy</a>
+        <a href="./account-deletion.html" class="nav-link">Account Deletion</a>
+        <a href="./support.html" class="nav-link">Support</a>
+        <a href="#showcase" class="button button-accent nav-cta">View App</a>
       </nav>
+
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-label="Toggle navigation menu"
+        aria-expanded="false"
+        aria-controls="nav-menu"
+      >
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
     </header>
 
-    <main>
-      <!-- HERO SHOWCASE -->
-      <section id="main-content" class="hero-section" aria-labelledby="hero-title">
+    <main id="main-content">
+      <!-- SECTION 1: HERO -->
+      <section class="hero-section" aria-labelledby="hero-title">
         <div class="hero-copy">
-          <p class="eyebrow">Smart pet health, connected care</p>
-          <h1 id="hero-title">PetNexa AI</h1>
-          <p class="hero-lede">
-            A privacy-conscious companion for pet profiles, vaccination records, preventive reminders,
-            AI-powered veterinary document scanning, nearby clinic discovery, and optional household cloud sync —
-            engineered with transparent policies, strict local data ownership, and self-service account deletion.
+          <p class="eyebrow">
+            <span class="eyebrow-pill">Smart Pet Care · Offline-First Privacy</span>
           </p>
-          <div class="hero-actions" aria-label="Page shortcuts">
-            <a class="button button-primary" href="#app-preview">View App Screens</a>
-            <a class="button button-danger" href="#account-deletion">Account Deletion Guide</a>
-            <a class="button button-secondary" href="#introduction">Read Privacy Policy</a>
-            <a class="button button-secondary" href="#play-data-safety">Google Play Data Safety</a>
+          <h1 id="hero-title" class="hero-title">
+            Intelligent pet care, engineered for <span class="gradient-text">absolute privacy.</span>
+          </h1>
+          <p class="hero-lede">
+            Keep vaccination histories, preventive reminders, and veterinary contacts in a secure, local-first
+            vault. Access AI-powered symptom triage when you need clarity—with zero model training on your pet's private records.
+          </p>
+
+          <div class="hero-actions" aria-label="Quick actions">
+            <a class="button button-primary" href="#features">Explore Features</a>
+            <a class="button button-secondary" href="#showcase">App Showcase</a>
+            <a class="button button-secondary" href="./privacy-policy.html">Privacy Commitment</a>
           </div>
-          <div class="meta-info" aria-label="Policy metadata">
-            <span>Version <strong data-app-version>1.0.6 (Build 6)</strong></span>
-            <span>Effective <strong data-effective-date>June 20, 2026</strong></span>
-            <span>Last Updated <strong data-last-updated>October 13, 2026</strong></span>
-            <span>Developer <strong data-developer-name>Dahon</strong></span>
+
+          <div class="meta-badges" aria-label="Application details">
+            <span class="meta-badge-item">Version <strong data-app-version>1.0.6 (Build 6)</strong></span>
+            <span class="meta-badge-item">Platform <strong>Android &amp; iOS</strong></span>
+            <span class="meta-badge-item">Storage <strong>Local SQLite by Default</strong></span>
           </div>
-          <div class="hero-insights" aria-label="PetNexa AI privacy highlights">
-            <article class="hero-insight">
-              <strong>Local-First Solo Posture</strong>
-              <span>Pet profiles, weights, notes, and records stay securely inside your device SQLite database by default.</span>
+
+          <div class="hero-highlights" aria-label="Key app highlights">
+            <article class="hero-highlight-card">
+              <strong>Offline-First Solo Posture</strong>
+              <span>Medical records, notes, and weights stay inside your device SQLite database.</span>
             </article>
-            <article class="hero-insight">
-              <strong>Ephemeral Online AI & OCR</strong>
-              <span>Consultations and document OCR run ephemerally over encrypted TLS with zero model training retention.</span>
+            <article class="hero-highlight-card">
+              <strong>Ephemeral AI Symptom Triage</strong>
+              <span>Consultations run ephemerally with zero retention for machine learning training.</span>
             </article>
-            <article class="hero-insight">
+            <article class="hero-highlight-card">
               <strong>Foreground Location Only</strong>
-              <span>Find a Vet queries OpenStreetMap Overpass API strictly in the foreground. Zero background GPS tracking.</span>
+              <span>Find nearby clinics without background tracking or persistent location storage.</span>
             </article>
-            <article class="hero-insight">
-              <strong>Instant Self-Service Deletion</strong>
-              <span>Permanently delete your account, synced home data, and cloud assets directly in-app or via email request.</span>
+            <article class="hero-highlight-card">
+              <strong>Complete Data Ownership</strong>
+              <span>Export portable JSON v2 backups or delete your cloud account instantly.</span>
             </article>
           </div>
         </div>
 
-        <div class="hero-visual" aria-label="PetNexa AI app screenshots">
+        <div class="hero-visual" aria-label="PetNexa AI application overview">
           <div class="device-showcase">
-            <figure class="phone-frame phone-frame-primary">
+            <figure class="phone-frame">
               <img
                 src="./screenshots/02-dashboard.png"
                 width="430"
                 height="932"
                 loading="eager"
                 decoding="async"
-                alt="PetNexa AI dashboard showing demo pet care reminders and featured pet details."
+                alt="PetNexa AI Care Dashboard showing daily routine reminders, stats, and quick actions."
               />
             </figure>
             <div class="showcase-note">
-              <strong>Product Preview</strong>
-              <span>Sample demonstration content only. No real owner, pet, or medical data is shown.</span>
+              <strong>Live App Preview</strong>
+              <span>Sample demo data only. No real personal records.</span>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- POLICY SUMMARY -->
-      <section class="policy-summary" aria-labelledby="summary-title">
-        <div class="summary-header">
-          <p class="eyebrow">Policy summary</p>
-          <h2 id="summary-title">Designed for transparency, user ownership, and pet safety.</h2>
-          <p>
-            PetNexa AI is built around practical, modern pet-care workflows. This privacy policy details
-            what data stays offline on your physical device, what synchronizes when using collaborative household accounts,
-            and how online features like AI symptom consultations, document scanning (OCR), and clinic discovery operate safely.
-          </p>
-        </div>
-        <div class="summary-grid">
-          <article class="summary-card">
-            <span class="summary-kicker">01</span>
-            <h3>Default local SQLite posture</h3>
-            <p>In Solo mode, all pet records, health histories, and care reminders reside exclusively on your physical device in SQLite. No account required.</p>
-          </article>
-          <article class="summary-card">
-            <span class="summary-kicker">02</span>
-            <h3>Online AI with credit meter</h3>
-            <p>AI symptom consultations strictly require active internet connectivity and 1 available credit. Triage rules flag emergencies instantly.</p>
-          </article>
-          <article class="summary-card">
-            <span class="summary-kicker">03</span>
-            <h3>Smart document scanner OCR</h3>
-            <p>Veterinary invoices and prescription photos are processed ephemerally for optical text extraction with zero foundation model training.</p>
-          </article>
-          <article class="summary-card">
-            <span class="summary-kicker">04</span>
-            <h3>Foreground location only</h3>
-            <p>Find a Vet queries OpenStreetMap Overpass API and Nominatim using foreground coordinates only when viewing the map. Never in the background.</p>
-          </article>
-          <article class="summary-card">
-            <span class="summary-kicker">05</span>
-            <h3>User control & deletion</h3>
-            <p>Export portable JSON backups with embedded media, wipe local records, or permanently delete your cloud account directly from Settings.</p>
-          </article>
-        </div>
-      </section>
+      <!-- SECTION 2: MAIN APP SHOWCASE (3-PHONE STAGGERED TRIO) -->
+      <section id="showcase" class="main-showcase-section" aria-labelledby="showcase-title">
+        <div class="showcase-stage">
+          <div class="section-header text-center">
+            <p class="eyebrow">
+              <span class="eyebrow-pill">Experience PetNexa AI</span>
+            </p>
+            <h2 id="showcase-title">Designed for single-thumb reach and calm care.</h2>
+            <p>
+              Every screen was engineered to minimize stress during vet visits and daily pet routines.
+              Captured directly from the PetNexa AI mobile app using sample demonstration data.
+            </p>
+          </div>
 
-      <!-- INTERACTIVE TABLE OF CONTENTS -->
-      <section class="toc-section" aria-labelledby="toc-heading">
-        <div class="toc-header">
-          <p class="eyebrow">Quick Navigation</p>
-          <h3 id="toc-heading">Table of Contents</h3>
-          <p>Jump directly to any section of the PetNexa AI Privacy Policy and Compliance Documentation.</p>
-        </div>
-        <div class="toc-grid">
-          <a href="#introduction" class="toc-card"><span class="toc-num">01</span><span class="toc-text">Introduction & Architecture</span></a>
-          <a href="#data-collected" class="toc-card"><span class="toc-num">02</span><span class="toc-text">Information We Collect</span></a>
-          <a href="#how-we-use-data" class="toc-card"><span class="toc-num">03</span><span class="toc-text">How We Use Information</span></a>
-          <a href="#ai-processing" class="toc-card"><span class="toc-num">04</span><span class="toc-text">AI Features & Processing</span></a>
-          <a href="#third-party-services" class="toc-card"><span class="toc-num">05</span><span class="toc-text">Third-Party Services</span></a>
-          <a href="#security-storage" class="toc-card"><span class="toc-num">06</span><span class="toc-text">Data Storage & Security</span></a>
-          <a href="#retention" class="toc-card"><span class="toc-num">07</span><span class="toc-text">Data Retention Policy</span></a>
-          <a href="#data-sharing" class="toc-card"><span class="toc-num">08</span><span class="toc-text">Data Sharing & Disclosure</span></a>
-          <a href="#permissions" class="toc-card"><span class="toc-num">09</span><span class="toc-text">Application Permissions</span></a>
-          <a href="#user-rights" class="toc-card"><span class="toc-num">10</span><span class="toc-text">User Rights & Portability</span></a>
-          <a href="#account-deletion" class="toc-card"><span class="toc-num">11</span><span class="toc-text">Account & Data Deletion</span></a>
-          <a href="#children-privacy" class="toc-card"><span class="toc-num">12</span><span class="toc-text">Children's Privacy (13+)</span></a>
-          <a href="#international-processing" class="toc-card"><span class="toc-num">13</span><span class="toc-text">International Data Processing</span></a>
-          <a href="#policy-changes" class="toc-card"><span class="toc-num">14</span><span class="toc-text">Changes to This Policy</span></a>
-          <a href="#contact" class="toc-card"><span class="toc-num">15</span><span class="toc-text">Contact Information</span></a>
-          <a href="#play-data-safety" class="toc-card"><span class="toc-num">16</span><span class="toc-text">Google Play Data Safety</span></a>
-          <a href="#terms-of-service" class="toc-card"><span class="toc-num">17</span><span class="toc-text">Terms & Care Disclaimers</span></a>
-        </div>
-      </section>
+          <!-- Mobile Tab Selector (Visible on small screens) -->
+          <div class="showcase-mobile-tabs" role="tablist" aria-label="Mobile preview screen selector">
+            <button class="showcase-tab-btn is-active" type="button" data-showcase-tab="dashboard">Dashboard</button>
+            <button class="showcase-tab-btn" type="button" data-showcase-tab="records">Records Vault</button>
+            <button class="showcase-tab-btn" type="button" data-showcase-tab="ai">AI Triage</button>
+          </div>
 
-      <!-- PRODUCT PREVIEW SHOWCASE -->
-      <section id="app-preview" class="app-preview" aria-labelledby="app-preview-title">
-        <div class="section-heading">
-          <p class="eyebrow">Product preview</p>
-          <h2 id="app-preview-title">A polished mobile experience for daily pet care.</h2>
-          <p>
-            Screenshots are captured from the app using sample demonstration data, so families
-            can inspect the product experience without exposing private pet records.
-          </p>
-        </div>
-
-        <div class="showcase-grid">
-          <figure class="showcase-feature">
-            <div class="phone-frame">
-              <img
-                src="./screenshots/03-my-pets.png"
-                width="430"
-                height="932"
-                loading="lazy"
-                decoding="async"
-                alt="PetNexa AI My Pets screen with demo profile cards and care badges."
-              />
+          <!-- 3-Phone Staggered Trio -->
+          <div class="phone-trio" aria-label="PetNexa AI three-screen demonstration">
+            <!-- Left Phone: Health Records -->
+            <div class="phone-trio-item side-phone">
+              <div class="mockup-frame">
+                <img
+                  src="./screenshots/04-records.png"
+                  width="430"
+                  height="932"
+                  loading="lazy"
+                  decoding="async"
+                  alt="PetNexa AI Health Records Vault with vaccination cards and AI OCR document scanning."
+                />
+              </div>
+              <div class="phone-trio-caption">
+                <strong>Clinical Records Vault</strong>
+                <span>Vaccination logs, clinic details &amp; AI document scan.</span>
+              </div>
             </div>
-            <figcaption>
-              <strong>Pet profiles stay organized</strong>
-              <span>Structured cards, care badges, profile completeness hints, age, weight history, breed, and quick actions are built for mobile reach.</span>
-            </figcaption>
-          </figure>
 
-          <div class="feature-panel">
-            <article>
-              <h3>Care dashboard</h3>
-              <p>See featured pets, scheduled reminders, health status updates, and quick triage shortcuts from the main screen.</p>
-            </article>
-            <article>
-              <h3>Medical timeline & OCR</h3>
-              <p>Track checkups, vaccines, deworming, prescriptions, and smart AI scans of clinic documents and receipts.</p>
-            </article>
-            <article>
-              <h3>AI Assistant</h3>
-              <p>Online symptom consultations provide structured care insights with emergency veterinary red-flag alerts.</p>
-            </article>
-            <article>
-              <h3>Privacy & controls</h3>
-              <p>Manage data export, backup restore, cloud sync, notifications, and permanent account deletion in Settings.</p>
-            </article>
+            <!-- Center Phone: Featured Dashboard (12-15% more prominent) -->
+            <div class="phone-trio-item center-phone">
+              <span class="phone-badge-prominent">Featured Home</span>
+              <div class="mockup-frame">
+                <img
+                  id="center-phone-img"
+                  src="./screenshots/02-dashboard.png"
+                  width="430"
+                  height="932"
+                  loading="eager"
+                  decoding="async"
+                  alt="PetNexa AI Care Dashboard showing daily routine reminders, stats, and quick actions."
+                />
+              </div>
+              <div class="phone-trio-caption">
+                <strong id="center-phone-title">Care Dashboard</strong>
+                <span id="center-phone-desc">Daily overview with active pet status and due care items.</span>
+              </div>
+            </div>
+
+            <!-- Right Phone: AI Assistant -->
+            <div class="phone-trio-item side-phone">
+              <div class="mockup-frame">
+                <img
+                  src="./screenshots/05-ai-assistant.png"
+                  width="430"
+                  height="932"
+                  loading="lazy"
+                  decoding="async"
+                  alt="PetNexa AI Symptom Assistant showing credit balance, robot guide, and triage intake."
+                />
+              </div>
+              <div class="phone-trio-caption">
+                <strong>AI Symptom Assistant</strong>
+                <span>3-step symptom evaluation with credit balance tracking.</span>
+              </div>
+            </div>
           </div>
         </div>
+      </section>
 
-        <div class="screenshot-grid" aria-label="PetNexa AI app screenshots gallery">
-          <figure class="screenshot-card">
-            <div class="phone-frame">
+      <!-- SECTION 3: KEY VERIFIED FEATURES -->
+      <section id="features" class="features-section" aria-labelledby="features-title">
+        <div class="section-header">
+          <p class="eyebrow">
+            <span class="eyebrow-pill">Core Capabilities</span>
+          </p>
+          <h2 id="features-title">Everything your pet needs, kept securely in your hands.</h2>
+          <p>
+            PetNexa AI is designed around practical daily care workflows, combining offline reliability
+            with on-demand intelligent tools to safeguard your pet.
+          </p>
+        </div>
+
+        <div class="features-grid">
+          <!-- Feature 1: Local Dossier -->
+          <article class="feature-card">
+            <div class="feature-card-header">
+              <div class="feature-icon-bubble" aria-hidden="true">&#x1F5C4;</div>
+              <span class="feature-tag">Offline-First SQLite</span>
+            </div>
+            <h3>Local-First Health Dossier</h3>
+            <p>
+              Pet profiles, vaccination records, deworming schedules, medication dosage notes, and weight milestones
+              remain inside your device's native SQLite database. No account creation required to start.
+            </p>
+            <div class="feature-card-footer">
+              &#x2713; Full offline availability without network connection
+            </div>
+          </article>
+
+          <!-- Feature 2: AI Triage -->
+          <article class="feature-card">
+            <div class="feature-card-header">
+              <div class="feature-icon-bubble" aria-hidden="true">&#x1FA7A;</div>
+              <span class="feature-tag">Gemini 2.5 Flash &amp; Groq</span>
+            </div>
+            <h3>AI-Assisted Symptom Guidance</h3>
+            <p>
+              A structured 3-step intake assesses symptom timing, energy, and breathing changes. The AI evaluates urgency
+              and highlights red-flag warning signs. Processing is ephemeral and never used to train foundation models.
+            </p>
+            <div class="feature-card-footer">
+              &#x2713; Zero data retention for machine learning training
+            </div>
+          </article>
+
+          <!-- Feature 3: Preventive Reminders -->
+          <article class="feature-card">
+            <div class="feature-card-header">
+              <div class="feature-icon-bubble" aria-hidden="true">&#x1F514;</div>
+              <span class="feature-tag">Local Device Alerts</span>
+            </div>
+            <h3>Preventive Care &amp; Reminders</h3>
+            <p>
+              Never miss a rabies booster, parasite prevention, or medication dose. Configure daily care summaries
+              and receive timely local notifications scheduled directly through device alarm managers.
+            </p>
+            <div class="feature-card-footer">
+              &#x2713; Customizable daily summary schedules (e.g., 08:00 AM)
+            </div>
+          </article>
+
+          <!-- Feature 4: Find Vets -->
+          <article class="feature-card">
+            <div class="feature-card-header">
+              <div class="feature-icon-bubble" aria-hidden="true">&#x1F3E5;</div>
+              <span class="feature-tag">OpenStreetMap &amp; MapLibre</span>
+            </div>
+            <h3>Emergency Vet &amp; Clinic Finder</h3>
+            <p>
+              Instantly locate nearby veterinary clinics and 24/7 animal emergency hospitals. Access verified phone hotlines
+              and navigation directions. GPS is queried strictly in the foreground—zero background location tracking.
+            </p>
+            <div class="feature-card-footer">
+              &#x2713; Foreground-only location access; zero tracking logs
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- SECTION 4: SECONDARY SCREENSHOT GALLERY -->
+      <section id="gallery" class="gallery-section" aria-labelledby="gallery-title">
+        <div class="section-header text-center">
+          <p class="eyebrow">
+            <span class="eyebrow-pill">Application Gallery</span>
+          </p>
+          <h2 id="gallery-title">Explore additional verified screens.</h2>
+          <p>
+            Inspect the real product experience across onboarding, family profiles, clinical records, and privacy controls.
+          </p>
+        </div>
+
+        <div class="gallery-grid">
+          <!-- 1. Onboarding -->
+          <figure class="gallery-card">
+            <div class="mockup-frame">
               <img
                 src="./screenshots/01-onboarding-login.png"
                 width="430"
                 height="932"
                 loading="lazy"
                 decoding="async"
-                alt="PetNexa AI onboarding screen for creating an owner profile."
+                alt="PetNexa AI onboarding screen with owner profile setup and age eligibility check."
               />
             </div>
             <figcaption>
-              <strong>Onboarding</strong>
-              <span>Owner profile setup with age gate (13+) and choice between Solo local mode or Household cloud sync.</span>
+              <strong>Owner Onboarding</strong>
+              <span>Profile setup with 13+ age gate check and direct privacy policy link.</span>
             </figcaption>
           </figure>
 
-          <figure class="screenshot-card">
-            <div class="phone-frame">
+          <!-- 2. Family Pets -->
+          <figure class="gallery-card">
+            <div class="mockup-frame">
               <img
-                src="./screenshots/02-dashboard.png"
+                src="./screenshots/03-my-pets.png"
                 width="430"
                 height="932"
                 loading="lazy"
                 decoding="async"
-                alt="PetNexa AI dashboard showing a featured demo pet, care alerts, and tab navigation."
+                alt="PetNexa AI My Pets screen showing dog and cat profile cards."
               />
             </div>
             <figcaption>
-              <strong>Dashboard</strong>
-              <span>Care summary, featured pet, scheduled reminders, and immediate care action shortcuts.</span>
+              <strong>Pet Family Profiles</strong>
+              <span>Multi-pet management with breed, age, weight milestones, and microchip IDs.</span>
             </figcaption>
           </figure>
 
-          <figure class="screenshot-card">
-            <div class="phone-frame">
+          <!-- 3. Records -->
+          <figure class="gallery-card">
+            <div class="mockup-frame">
               <img
                 src="./screenshots/04-records.png"
                 width="430"
                 height="932"
                 loading="lazy"
                 decoding="async"
-                alt="PetNexa AI records screen showing demo veterinary history cards."
+                alt="PetNexa AI health records screen showing deworming and vaccination history."
               />
             </div>
             <figcaption>
-              <strong>Health Records</strong>
-              <span>Comprehensive health history, vaccination logs, clinic details, and document attachments.</span>
+              <strong>Health Records &amp; OCR</strong>
+              <span>Medical history with vaccination logs, clinic details, and document scanner.</span>
             </figcaption>
           </figure>
 
-          <figure class="screenshot-card">
-            <div class="phone-frame">
+          <!-- 4. AI Assistant -->
+          <figure class="gallery-card">
+            <div class="mockup-frame">
               <img
                 src="./screenshots/05-ai-assistant.png"
                 width="430"
                 height="932"
                 loading="lazy"
                 decoding="async"
-                alt="PetNexa AI assistant screen for demo symptom guidance."
+                alt="PetNexa AI assistant screen showing credit balance and triage guidance."
               />
             </div>
             <figcaption>
-              <strong>AI Assistant</strong>
-              <span>Online-only structured symptom evaluation with credit balance tracking and emergency triage warnings.</span>
+              <strong>AI Symptom Assistant</strong>
+              <span>Structured symptom evaluation, credit tracking, and emergency triage warnings.</span>
             </figcaption>
           </figure>
 
-          <figure class="screenshot-card">
-            <div class="phone-frame">
+          <!-- 5. Privacy Settings -->
+          <figure class="gallery-card">
+            <div class="mockup-frame">
               <img
                 src="./screenshots/06-settings-privacy-controls.png"
                 width="430"
                 height="932"
                 loading="lazy"
                 decoding="async"
-                alt="PetNexa AI settings screen with legal, privacy, and data control options."
+                alt="PetNexa AI settings screen showing data export, clear local data, and account deletion."
               />
             </div>
             <figcaption>
-              <strong>Privacy Controls</strong>
-              <span>Settings tools for data backup, cloud account deletion, local data erase, and support contact.</span>
+              <strong>Privacy &amp; Data Controls</strong>
+              <span>Offline JSON backup export, Household Cloud Sync, and self-service account deletion.</span>
             </figcaption>
           </figure>
         </div>
       </section>
 
-      <!-- 1. INTRODUCTION & ARCHITECTURE -->
-      <section id="introduction" class="doc-section">
-        <h2>1. Introduction & Application Architecture</h2>
-        <p>
-          PetNexa AI is an intelligent pet health management and care companion mobile application developed and maintained by
-          <strong data-developer-name>Dahon</strong>. The application is distributed for Android (Google Play Store), iOS, and Web.
-        </p>
-        <p>
-          The purpose of this Privacy Policy is to clearly, truthfully, and comprehensively disclose how PetNexa AI handles user information,
-          what information is stored locally on your device versus synchronized to cloud services, how artificial intelligence features operate,
-          and how you can exercise full control over your personal information and pet health data.
-        </p>
-        <p>
-          PetNexa AI is engineered around a <strong>two-tier operational architecture</strong> designed to give users complete autonomy over their data posture:
-        </p>
-        <div class="data-grid">
-          <div class="data-card">
-            <h3>Solo Mode (Default Local-First)</h3>
-            <p>
-              When using PetNexa AI in Solo Mode, all owner profile details, pet profiles, vaccination records, weight tracking logs,
-              medical notes, reminders, and consultation history reside exclusively on your physical device in a native SQLite database
-              (or secure browser storage on web). No account registration, login credentials, or cloud server connections are required.
-              Your data remains completely under your personal physical custody.
-            </p>
-          </div>
-          <div class="data-card">
-            <h3>Household Sync Mode (Optional Cloud)</h3>
-            <p>
-              Users who wish to collaborate with family members or co-caretakers can optionally enable Household Sync. This mode connects
-              to a cloud backend hosted on Supabase (PostgreSQL with Row Level Security) via email OTP or Google OAuth authentication.
-              Selected pets, health records, reminders, and media attachments are securely synchronized among authorized members of that specific Home.
-            </p>
-          </div>
-          <div class="data-card">
-            <h3>Online-Only Connected Features</h3>
-            <p>
-              Certain advanced features strictly require an active internet connection to execute: AI symptom consultations,
-              AI veterinary document scanning (OCR), nearby clinic discovery (Find a Vet), and rewarded video ads. These features
-              transmit minimal, purpose-specific payloads over encrypted HTTPS connections.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- 2. INFORMATION WE COLLECT -->
-      <section id="data-collected" class="doc-section">
-        <h2>2. Information We Collect</h2>
-        <p>
-          PetNexa AI adheres strictly to data minimization principles. We collect and process only the information necessary to provide
-          the application's verified features. We do not collect or monitor data based on conjecture or unverified features.
-        </p>
-
-        <h3>2.1 Information Directly Provided by You</h3>
-        <div class="data-grid">
-          <div class="data-card">
-            <h3>Owner Profile & Settings</h3>
-            <p>
-              <strong>Information:</strong> Full display name, date of birth (used strictly to verify that the user meets the minimum age requirement of 13+),
-              daily summary notification time preference (e.g., 08:00 AM), preferred theme mode (Light, Dark, or System), and interface language.
-            </p>
-          </div>
-          <div class="data-card">
-            <h3>Pet Profiles</h3>
-            <p>
-              <strong>Information:</strong> Pet name, species (Dog, Cat, Bird, Rabbit, etc.), breed, biological sex, birth date, weight tracking log
-              (date, weight in kilograms), coat color, optional microchip identification number, assigned veterinary clinic, care notes, and profile avatar photos.
-            </p>
-          </div>
-          <div class="data-card">
-            <h3>Medical Records & Care Reminders</h3>
-            <p>
-              <strong>Information:</strong> Health visit category (Vaccination, Deworming, Medication, Surgery, Checkup, Grooming, Allergy, Lab Test, Other),
-              visit date, clinic name, attending veterinarian, medical notes, prescribed dosage, medication batch/lot numbers, weight at visit, next follow-up date,
-              and photo attachments. Care reminders include task title, recurrence, due date, linked pet ID, and completion status.
-            </p>
-          </div>
-          <div class="data-card">
-            <h3>AI Consultation Inputs</h3>
-            <p>
-              <strong>Information:</strong> Pet context (species, breed, age, weight) combined with user-reported symptom descriptions, onset duration,
-              frequency, appetite level, water intake, behavioral changes, mobility, breathing status, injury presence, additional observations, and preferred response language.
-            </p>
-          </div>
-          <div class="data-card">
-            <h3>Uploaded Documents & Media</h3>
-            <p>
-              <strong>Information:</strong> Photos captured via your device camera or selected from your photo library representing pet avatars,
-              medical record attachments, and veterinary clinic invoices or prescription documents submitted for optical text scanning.
-            </p>
-          </div>
-          <div class="data-card">
-            <h3>AI Response Safety Reports</h3>
-            <p>
-              <strong>Information:</strong> If you choose to report an AI consultation guidance response, the consultation ID, guidance excerpt,
-              risk level, user-selected report reason (unsafe, offensive, incorrect, or other), optional text comment, and a hashed installation identifier are submitted for moderation.
-            </p>
-          </div>
-        </div>
-
-        <h3>2.2 System-Generated and Device Information</h3>
-        <ul>
-          <li>
-            <strong>Foreground Location Coordinates:</strong> When you open the Find a Vet map, approximate or precise latitude and longitude coordinates
-            are requested solely in the foreground to center the map and query nearby clinics from the OpenStreetMap Overpass API. Your location is never accessed in the background.
-          </li>
-          <li>
-            <strong>Community Clinic Directory Submissions:</strong> When a user voluntarily submits or confirms a local veterinary clinic,
-            the clinic's public business name, address, telephone number, geographic coordinates, and an anonymous contributor UUID
-            (stored in device AsyncStorage) are submitted to Supabase to prevent duplicate spam submissions.
-          </li>
-          <li>
-            <strong>Diagnostic Error Logs (Local Only):</strong> If enabled in Settings, the app maintains a local FIFO ring buffer of up to 80 error events
-            (timestamp, error category, sanitized error message) strictly in device storage. Diagnostic logs are <strong>never</strong> transmitted automatically to any server;
-            they are exported only if you manually choose to export and attach them in an email to support.
-          </li>
-          <li>
-            <strong>Pseudonymous Identifiers & Rate Limiting:</strong> A cryptographic installation hash derived from limited network request headers is used
-            by backend Edge Functions to enforce rate limiting and prevent denial-of-service abuse. Session authentication tokens are stored securely using Expo SecureStore on native devices.
-          </li>
-        </ul>
-
-        <div class="callout-box callout-not-collected">
-          <div class="callout-header">
-            <span class="badge badge-danger">Explicit Exclusion</span>
-            <h4>What PetNexa AI Does NOT Collect</h4>
-          </div>
-          <p>To avoid any ambiguity regarding device capabilities, PetNexa AI explicitly does <strong>NOT</strong> collect, process, or monitor:</p>
-          <ul>
-            <li><strong>Audio Recordings or Microphone Data:</strong> Microphone access (<code>android.permission.RECORD_AUDIO</code>) is explicitly blocked in our application configuration. PetNexa AI has zero ability to record audio.</li>
-            <li><strong>Background Location Tracking:</strong> The application does not request background location (<code>ACCESS_BACKGROUND_LOCATION</code>). Location queries terminate when the map view is closed.</li>
-            <li><strong>Third-Party Crash Analytics SDKs:</strong> PetNexa AI contains zero automated telemetry or user-tracking SDKs (no Firebase Analytics, no Sentry, no Mixpanel, no Bugsnag).</li>
-            <li><strong>Payment Cards or Financial Data:</strong> PetNexa AI does not process subscriptions or in-app purchases. Rewarded ads provide credits without financial transactions.</li>
-            <li><strong>Human Health Data:</strong> Medical records managed in PetNexa AI relate strictly to domestic pets and companion animals.</li>
-            <li><strong>Biometric Identifiers:</strong> The application does not collect fingerprints, facial recognition scans, or biometric data.</li>
-          </ul>
-        </div>
-      </section>
-
-      <!-- 3. HOW WE USE INFORMATION -->
-      <section id="how-we-use-data" class="doc-section">
-        <h2>3. How We Use Information</h2>
-        <p>
-          We process collected information only for legitimate, transparent purposes directly tied to the functionality of PetNexa AI:
-        </p>
-        <ul>
-          <li><strong>Local Pet Care Management:</strong> Store, calculate pet ages, organize medical timelines, track vaccination validity, monitor weight trends, and maintain structured health profiles on your device.</li>
-          <li><strong>Preventive Care Reminders:</strong> Trigger on-device notifications for scheduled feedings, medications, vaccinations, and veterinary appointments based on your local device clock.</li>
-          <li><strong>Real-Time AI Symptom Evaluation:</strong> Submit pet context and user-described symptoms to cloud AI inference engines to generate structured, non-diagnostic wellness insights and immediate emergency escalation warnings.</li>
-          <li><strong>Optical Document Digitization (OCR):</strong> Transmit captured clinic invoices and prescription photos to cloud vision models to automatically extract clinic names, dates, vaccinations, dosages, and follow-up schedules.</li>
-          <li><strong>Nearby Clinic Discovery:</strong> Query OpenStreetMap Overpass API using foreground map coordinates to locate nearby veterinary hospitals, animal clinics, and emergency facilities.</li>
-          <li><strong>Household Multi-Member Sync:</strong> For users who opt into Household Sync, replicate pet profiles, medical history, reminders, and media attachments across approved furparent accounts linked by invite code.</li>
-          <li><strong>Ad-Supported AI Credit Meter:</strong> Display optional, non-personalized rewarded video advertisements via Google Mobile Ads to allow users to refill weekly AI consultation credits without payment.</li>
-          <li><strong>Security, Abuse Prevention & Safety Moderation:</strong> Enforce API request rate limits, verify user age requirements (13+), prevent community clinic directory manipulation, and review user-flagged AI responses for accuracy and safety.</li>
-          <li><strong>User-Initiated Technical Support:</strong> Review user-provided descriptions and manually attached diagnostic logs when resolving inquiries submitted to our support email.</li>
-        </ul>
-      </section>
-
-      <!-- 4. AI-POWERED FEATURES AND DATA PROCESSING -->
-      <section id="ai-processing" class="doc-section">
-        <h2>4. AI-Powered Features and Data Processing</h2>
-        <p>
-          PetNexa AI incorporates artificial intelligence to deliver symptom guidance and document OCR extraction.
-          Because transparency in AI data handling is critical, we disclose our exact technical architecture:
-        </p>
-
-        <div class="data-grid">
-          <div class="data-card">
-            <h3>Inference Providers & Routing</h3>
-            <p>
-              AI features are powered by <strong>Google Gemini</strong> (model <code>gemini-3.5-flash</code> via the Google Generative AI API)
-              with an automated fallback to <strong>Groq</strong> (model <code>openai/gpt-oss-20b</code> via Groq Cloud API).
-              All requests are proxied securely through Supabase Edge Functions (Deno runtime). API keys reside strictly on backend servers;
-              the mobile client never holds raw provider credentials.
-            </p>
-          </div>
-          <div class="data-card">
-            <h3>Ephemeral Processing & Zero Training</h3>
-            <p>
-              All inputs submitted to AI endpoints (symptom details, pet context, or base64 document images) are processed <strong>ephemerally in real time over TLS/HTTPS</strong>.
-              Under Google Cloud Generative AI and Groq developer API terms, customer API data is <strong>never used to train or fine-tune foundation models</strong>.
-              Neither provider retains ownership or training rights over your submitted data.
-            </p>
-          </div>
-          <div class="data-card">
-            <h3>No Cloud Conversation Storage</h3>
-            <p>
-              The Supabase Edge Functions do not log, persist, or store your consultation prompts, responses, or scanned images in a central cloud database during ordinary inference.
-              Your consultation history is saved strictly on your local device (and synced to your private Household database if Household Sync is active).
-            </p>
-          </div>
-        </div>
-
-        <div class="callout-box callout-amber">
-          <div class="callout-header">
-            <span class="badge badge-warning">Safety Protocol</span>
-            <h4>Deterministic Red-Flag Emergency Triage</h4>
-          </div>
+      <!-- SECTION 5: HOW PETNEXA AI WORKS -->
+      <section id="how-it-works" class="steps-section" aria-labelledby="steps-title">
+        <div class="section-header">
+          <p class="eyebrow">
+            <span class="eyebrow-pill">Simple, Transparent Workflow</span>
+          </p>
+          <h2 id="steps-title">How PetNexa AI protects your pet and your privacy.</h2>
           <p>
-            Before and alongside AI inference, PetNexa AI executes deterministic, rule-based emergency triage algorithms.
-            If your input contains life-threatening keywords (such as breathing distress, sudden collapse, seizures, severe bleeding, or suspected poisoning),
-            the application immediately triggers an <strong>Emergency</strong> classification and instructs you to transport your pet to an emergency veterinary clinic immediately without relying on home monitoring.
+            Get started in seconds without tedious account forms. Move seamlessly between offline solo management
+            and collaborative household care.
           </p>
         </div>
 
-        <h3>Safety Reporting Mechanism</h3>
-        <p>
-          Every AI consultation response features a reporting action (flag icon). If you encounter guidance that you consider unsafe, offensive, or incorrect,
-          you can submit a report. The consultation ID, excerpt, risk level, report category, optional user comment, and a hashed installation identifier
-          are stored in the <code>ai_response_reports</code> table for developer safety audits.
-        </p>
-
-        <h3>Crucial Medical Limitations</h3>
-        <p>
-          <strong>PetNexa AI is an informational tool, not a licensed veterinarian.</strong> AI guidance does not constitute veterinary medical diagnosis,
-          prognosis, treatment plans, or prescription medication dosages. The AI is specifically instructed never to prescribe medications, provide dosage instructions,
-          or recommend fasting periods. Always consult a qualified, licensed veterinarian for animal health concerns.
-        </p>
-      </section>
-
-      <!-- 5. THIRD-PARTY SERVICES -->
-      <section id="third-party-services" class="doc-section">
-        <h2>5. Third-Party Services & Integrations</h2>
-        <p>
-          To deliver reliable backend, mapping, advertising, and AI capabilities, PetNexa AI integrates with the following verified third-party service providers.
-          Each provider processes data under strict technical parameters:
-        </p>
-
-        <div class="service-list">
-          <div class="service-item">
-            <div>
-              <div class="service-item-header">
-                <h3>Supabase Inc.</h3>
-                <span class="badge badge-teal">Cloud Infrastructure</span>
-              </div>
-              <p>
-                Provides user authentication (email OTP and Google OAuth), managed PostgreSQL database sync for Household mode,
-                private encrypted object storage for media attachments, and serverless Edge Functions for AI proxying.
-              </p>
-            </div>
-            <a class="service-item-link" href="https://supabase.com/privacy" target="_blank" rel="noopener noreferrer">
-              View Supabase Privacy Policy &rarr;
-            </a>
-          </div>
-
-          <div class="service-item">
-            <div>
-              <div class="service-item-header">
-                <h3>Google Cloud / Google AI (Gemini)</h3>
-                <span class="badge badge-teal">AI & OCR Provider</span>
-              </div>
-              <p>
-                Powers real-time symptom consultations and optical character recognition for veterinary document extraction.
-                Requests are processed ephemerally with zero foundation model training on API payloads.
-              </p>
-            </div>
-            <a class="service-item-link" href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">
-              View Google Privacy Policy &rarr;
-            </a>
-          </div>
-
-          <div class="service-item">
-            <div>
-              <div class="service-item-header">
-                <h3>Groq Inc.</h3>
-                <span class="badge badge-teal">AI Inference Fallback</span>
-              </div>
-              <p>
-                Serves as a high-speed inference fallback for AI symptom consultations when primary endpoints experience latency.
-                Processes requests ephemerally without persistent training retention.
-              </p>
-            </div>
-            <a class="service-item-link" href="https://groq.com/privacy-policy/" target="_blank" rel="noopener noreferrer">
-              View Groq Privacy Policy &rarr;
-            </a>
-          </div>
-
-          <div class="service-item">
-            <div>
-              <div class="service-item-header">
-                <h3>OpenStreetMap & Overpass API / Nominatim</h3>
-                <span class="badge badge-teal">Map & Geocoding</span>
-              </div>
-              <p>
-                Provides community map data and veterinary clinic search queries for Find a Vet. Queries transmit foreground coordinates
-                or bounding viewports. No personal account or pet data is transmitted to OpenStreetMap.
-              </p>
-            </div>
-            <a class="service-item-link" href="https://wiki.osmfoundation.org/wiki/Privacy_Policy" target="_blank" rel="noopener noreferrer">
-              View OpenStreetMap Privacy Policy &rarr;
-            </a>
-          </div>
-
-          <div class="service-item">
-            <div>
-              <div class="service-item-header">
-                <h3>Google Mobile Ads (AdMob & UMP)</h3>
-                <span class="badge badge-teal">Rewarded Advertising</span>
-              </div>
-              <p>
-                Serves optional rewarded video ads used to refill weekly AI consultation credits. Utilizes the Google User Messaging Platform (UMP)
-                for consent management and requests non-personalized ads (<code>requestNonPersonalizedAdsOnly: true</code>) by default.
-              </p>
-            </div>
-            <a class="service-item-link" href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer">
-              View Google Advertising Privacy Policy &rarr;
-            </a>
-          </div>
-
-          <div class="service-item">
-            <div>
-              <div class="service-item-header">
-                <h3>MapLibre GL</h3>
-                <span class="badge badge-neutral">Client Map Engine</span>
-              </div>
-              <p>
-                Open-source map rendering framework (<code>@maplibre/maplibre-react-native</code>) used to display interactive map tiles on device.
-                Operates locally on device without collecting telemetry.
-              </p>
-            </div>
-            <a class="service-item-link" href="https://maplibre.org/" target="_blank" rel="noopener noreferrer">
-              View MapLibre Project &rarr;
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <!-- 6. DATA STORAGE AND SECURITY -->
-      <section id="security-storage" class="doc-section">
-        <h2>6. Data Storage and Security Practices</h2>
-        <p>
-          PetNexa AI implements comprehensive, industry-standard administrative, physical, and technical security measures to protect user data:
-        </p>
-
-        <div class="data-grid">
-          <div class="data-card">
-            <h3>Local Device Security</h3>
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-number">01</div>
+            <h3>Create Pet Profile</h3>
             <p>
-              In Solo mode, data is isolated inside your operating system's private app sandbox in native SQLite.
-              Sensitive authentication tokens and cryptographic installation keys utilize <strong>Expo SecureStore</strong>
-              (backed by Android Keystore and iOS Keychain). Android builds enforce <code>allowBackup: false</code> to prevent
-              unauthorized extraction via physical ADB backup bridges.
+              Add your dog, cat, or other pet in Solo Mode. Enter name, breed, birth date, and weight. No cloud sign-in required.
             </p>
           </div>
-          <div class="data-card">
-            <h3>Cloud Tenant Isolation (RLS)</h3>
+
+          <div class="step-card">
+            <div class="step-number">02</div>
+            <h3>Log Health &amp; Schedules</h3>
             <p>
-              In Household Sync mode, Supabase PostgreSQL tables strictly enforce <strong>Row Level Security (RLS)</strong> policies.
-              Database rows are accessible exclusively to authenticated users who possess verified membership in that specific Home.
-              Cross-tenant access is structurally prohibited at the database engine level.
+              Record vaccinations, deworming, and vet visits. Set reminders that trigger device alerts automatically.
             </p>
           </div>
-          <div class="data-card">
-            <h3>Private Signed Storage Assets</h3>
+
+          <div class="step-card">
+            <div class="step-number">03</div>
+            <h3>Consult AI for Triage</h3>
             <p>
-              Media files uploaded in Household mode (pet photos and medical attachments) are stored in private Supabase Storage buckets
-              (<code>petnexa-home-assets</code>). Files are never publicly accessible via static URLs; they are retrieved strictly through
-              authenticated, short-lived signed URLs generated on demand.
+              When unexpected symptoms arise, answer structured questions to receive practical guidance and red-flag danger triage.
+            </p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">04</div>
+            <h3>Own Your Data</h3>
+            <p>
+              Keep records 100% offline or invite family members with optional Household Sync. Export portable JSON backups anytime.
             </p>
           </div>
         </div>
-
-        <p>
-          <strong>Encryption in Transit:</strong> All communications between the mobile application, Supabase infrastructure, Google AI endpoints,
-          and OpenStreetMap servers are encrypted using modern Transport Layer Security (TLS 1.3 / HTTPS).
-        </p>
-        <p>
-          <strong>Binary Hardening:</strong> Production Android application binaries are compiled with full R8 code shrinking, dead-code elimination,
-          and DEX optimization to prevent reverse-engineering and tampering.
-        </p>
-        <p>
-          <em>Security Disclaimer:</em> While we implement industry-standard defenses and continuously audit our security architecture,
-          no method of electronic storage or internet transmission can be guaranteed to be 100% impenetrable.
-        </p>
       </section>
 
-      <!-- 7. DATA RETENTION POLICY -->
-      <section id="retention" class="doc-section">
-        <h2>7. Data Retention Policy</h2>
-        <p>
-          We retain personal and pet health information only for as long as necessary to fulfill the operational purposes described in this policy:
-        </p>
-        <ul>
-          <li><strong>Local Device Records:</strong> Stored continuously on your device until you manually modify or delete individual items, restore an overwriting backup file, wipe local data via Settings, or uninstall the application.</li>
-          <li><strong>Household Cloud Records:</strong> Retained in Supabase for the duration of your active Household account. Soft-deleted records are retained temporarily to ensure sync consistency across offline devices and are purged permanently upon account deletion.</li>
-          <li><strong>AI & OCR Payloads:</strong> Ephemeral in transit. Prompts, uploaded receipt images, and generated inferences are not retained in a persistent central database during standard consultations.</li>
-          <li><strong>AI Safety Reports:</strong> Retained in the <code>ai_response_reports</code> table for up to 90 days following submission to enable safety investigation and model evaluation.</li>
-          <li><strong>Local Diagnostic Event Logs:</strong> Maintained in a local FIFO ring buffer strictly capped at 80 events on device. Cleared whenever the user taps "Clear Diagnostics" or "Clear Local Device Data".</li>
-          <li><strong>Community Clinic Submissions:</strong> Public clinic directory records (name, address, phone, coordinates) remain in the directory to benefit the community. Pseudonymous contributor UUIDs are retained to prevent vote manipulation.</li>
-        </ul>
-      </section>
-
-      <!-- 8. DATA SHARING AND DISCLOSURE -->
-      <section id="data-sharing" class="doc-section">
-        <h2>8. Data Sharing and Disclosure</h2>
-        <div class="callout-box callout-teal">
-          <div class="callout-header">
-            <span class="badge badge-teal">Zero Sale Commitment</span>
-            <h4>We Do Not Sell Your Data</h4>
-          </div>
-          <p>
-            PetNexa AI does <strong>not sell, rent, monetize, or trade</strong> your personal information, pet profiles, or medical documents
-            to data brokers, commercial advertisers, or third-party marketing companies under any circumstances.
-          </p>
-        </div>
-
-        <p>We disclose information only in the following specific circumstances:</p>
-        <ul>
-          <li>
-            <strong>Authorized Household Members:</strong> If you use Household Sync, any family member or co-caretaker who joins your Home
-            using your unique invite code can view and edit the pets, records, reminders, and photos associated with that Household.
-          </li>
-          <li>
-            <strong>Verified Infrastructure Service Providers:</strong> As detailed in Section 5, trusted technical vendors (Supabase, Google Cloud, Groq, OpenStreetMap)
-            process data strictly as sub-processors to execute specific user-initiated functions under appropriate confidentiality and data protection obligations.
-          </li>
-          <li>
-            <strong>Legal and Regulatory Compliance:</strong> We may disclose information if required to do so by applicable law, valid court order,
-            subpoena, or governmental regulation, or when necessary to protect the vital interests, safety, or legal rights of our users, the public, or animals.
-          </li>
-        </ul>
-      </section>
-
-      <!-- 9. APPLICATION PERMISSIONS -->
-      <section id="permissions" class="doc-section">
-        <h2>9. Application Permissions</h2>
-        <p>
-          PetNexa AI requests only device permissions essential to its verified functionality. All sensitive permissions are requested
-          with in-app runtime rationales and can be granted or revoked at any time in your device's system settings:
-        </p>
-
-        <div class="info-table-container">
-          <table class="info-table">
-            <thead>
-              <tr>
-                <th>Permission</th>
-                <th>Platform</th>
-                <th>Status</th>
-                <th>Verified Purpose & Rationale</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>Camera</strong> (<code>CAMERA</code>)</td>
-                <td>Android & iOS</td>
-                <td><span class="badge badge-warning">Optional</span></td>
-                <td>Used only when you explicitly choose to take a pet avatar photo, capture a medical document attachment, or photograph a veterinary receipt for AI document scanning (OCR).</td>
-              </tr>
-              <tr>
-                <td><strong>Photo Library</strong> (<code>READ_MEDIA_IMAGES</code>)</td>
-                <td>Android & iOS</td>
-                <td><span class="badge badge-warning">Optional</span></td>
-                <td>Used only when you choose an existing photo from your gallery for pet profiles or medical record attachments. (Android uses the privacy-preserving system Photo Picker; broad storage access is blocked).</td>
-              </tr>
-              <tr>
-                <td><strong>Notifications</strong> (<code>POST_NOTIFICATIONS</code>)</td>
-                <td>Android & iOS</td>
-                <td><span class="badge badge-warning">Optional</span></td>
-                <td>Used to deliver on-device scheduled reminders for medications, feeding routines, vet appointments, and your daily morning care summary.</td>
-              </tr>
-              <tr>
-                <td><strong>Foreground Location</strong> (<code>ACCESS_FINE_LOCATION</code>, <code>ACCESS_COARSE_LOCATION</code>)</td>
-                <td>Android & iOS</td>
-                <td><span class="badge badge-warning">Optional</span></td>
-                <td>Used solely while viewing the Find a Vet map to center the map on your location and query nearby clinics. <strong>Never accessed in the background.</strong></td>
-              </tr>
-              <tr>
-                <td><strong>Network & Internet</strong> (<code>INTERNET</code>, <code>ACCESS_NETWORK_STATE</code>)</td>
-                <td>Android & iOS</td>
-                <td><span class="badge badge-teal">Required for Online</span></td>
-                <td>Required to execute online AI consultations, OCR document extraction, Household cloud sync, map tile loading, and rewarded video ads.</td>
-              </tr>
-              <tr>
-                <td><strong>Microphone / Audio</strong> (<code>RECORD_AUDIO</code>)</td>
-                <td>Android</td>
-                <td><span class="badge badge-danger">Blocked</span></td>
-                <td><strong>Explicitly blocked.</strong> The app does not record audio or access microphone hardware.</td>
-              </tr>
-              <tr>
-                <td><strong>Background Location</strong> (<code>ACCESS_BACKGROUND_LOCATION</code>)</td>
-                <td>Android</td>
-                <td><span class="badge badge-danger">Not Requested</span></td>
-                <td><strong>Not requested.</strong> The app does not track user location in the background.</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
-
-      <!-- 10. USER RIGHTS AND CHOICES -->
-      <section id="user-rights" class="doc-section">
-        <h2>10. User Rights, Privacy Choices & Data Portability</h2>
-        <p>
-          We believe users must maintain complete sovereignty over their data. Regardless of your location, PetNexa AI provides robust controls:
-        </p>
-
-        <div class="data-grid">
-          <div class="data-card">
-            <h3>Full Data Portability (JSON v2)</h3>
+      <!-- SECTION 6: PRIVACY & TRUST BY DESIGN -->
+      <section class="trust-section" aria-labelledby="trust-title">
+        <div class="trust-banner">
+          <div class="trust-content">
+            <p class="eyebrow" style="color: var(--accent-warm);">Data Sovereignty</p>
+            <h2 id="trust-title">Built on uncompromising privacy principles.</h2>
             <p>
-              You can export a complete, portable JSON backup of your application data at any time from
-              <strong>Settings &gt; Data & Cloud Sync &gt; Backup & Restore (JSON) &gt; Export Backup</strong>.
-              Backups include all owner details, pets, health records, reminders, consultations, and embedded base64 media files.
-              You can store, archive, or restore this backup file on any compatible device.
+              Your pet's health records belong to you. We built PetNexa AI from the ground up to respect
+              data minimization, transparent processing, and self-service control.
             </p>
-          </div>
-          <div class="data-card">
-            <h3>Access & Rectification</h3>
-            <p>
-              You have the right to inspect and update any personal information or pet data directly within the application.
-              Owner name and birthdate can be modified in Settings. Pet profiles, medical records, and reminders can be edited or deleted at will.
-            </p>
-          </div>
-          <div class="data-card">
-            <h3>Consent & Permission Revocation</h3>
-            <p>
-              You can revoke Camera, Location, or Notification permissions at any time via your device's system settings.
-              You can switch between Household Sync and Solo Mode, log out of your account, or decline optional rewarded video ads.
-            </p>
-          </div>
-        </div>
-
-        <h3>Global Privacy Framework Compliance (GDPR & CCPA/CPRA)</h3>
-        <p>
-          For users residing in the European Economic Area (EEA), the United Kingdom, or California, PetNexa AI complies with applicable privacy laws:
-        </p>
-        <ul>
-          <li><strong>Right to Know / Access (GDPR Art. 15 / CCPA):</strong> You can verify what personal data is processed by exporting your backup or contacting us.</li>
-          <li><strong>Right to Rectification (GDPR Art. 16):</strong> You can correct inaccurate personal data directly in the application.</li>
-          <li><strong>Right to Erasure / Deletion (GDPR Art. 17 / CCPA):</strong> You can erase local data instantly or permanently delete your cloud account (see Section 11).</li>
-          <li><strong>Right to Data Portability (GDPR Art. 20):</strong> Provided via our portable JSON export format.</li>
-          <li><strong>Right to Opt-Out of Sale / Sharing:</strong> We do not sell or share your personal information as defined by CCPA/CPRA.</li>
-          <li><strong>Non-Discrimination:</strong> We do not discriminate against users who exercise their privacy rights.</li>
-        </ul>
-      </section>
-
-      <!-- 11. DEDICATED ACCOUNT AND DATA DELETION SECTION (URL: /#account-deletion) -->
-      <section id="account-deletion" class="doc-section">
-        <div class="deletion-container">
-          <div class="deletion-header">
-            <span class="badge badge-danger">Account & Data Deletion</span>
-            <span class="badge badge-teal">User Control</span>
-            <span class="badge badge-success">Self-Service Available</span>
-          </div>
-          <h2>11. Dedicated Account and Data Deletion Policy</h2>
-          <p>
-            PetNexa AI provides transparent, immediate, and permanent mechanisms to delete your account, personal details,
-            pet health records, and associated cloud assets. Whether you use Solo mode or Household cloud sync, you have the right
-            to permanently purge your data.
-          </p>
-
-          <div class="steps-list">
-            <div class="step-card">
-              <div class="step-card-num">1</div>
-              <h4>In-App Self-Service Deletion (Instant)</h4>
-              <p>Signed-in Household users can permanently delete their cloud account directly inside the app:</p>
-              <p>
-                <strong>Settings &gt; Data & Cloud Sync &gt; Tap "Delete PetNexa Account" &gt; Confirm "DELETE".</strong>
-              </p>
-              <p>
-                This triggers an automated call to our secure <code>delete-account</code> backend function, which immediately:
-              </p>
-              <ul>
-                <li>Permanently deletes your account and credentials from Supabase Auth.</li>
-                <li>Removes household memberships and deletes owned Home database rows.</li>
-                <li>Purges all uploaded pet photos and medical attachments from private Supabase Storage (<code>petnexa-home-assets</code>).</li>
-                <li>Clears local SQLite database records, secure installation tokens, and cached storage on device.</li>
-              </ul>
-            </div>
-
-            <div class="step-card">
-              <div class="step-card-num">2</div>
-              <h4>Email Deletion Request (Within 30 Days)</h4>
-              <p>
-                If you have uninstalled the app, lost device access, or prefer manual processing, you can request permanent deletion by emailing:
-              </p>
-              <p>
-                <a href="mailto:leaves018@gmail.com?subject=PetNexa%20AI%20Account%20Deletion%20Request" data-contact-link>
-                  <strong data-contact-email>leaves018@gmail.com</strong>
-                </a>
-              </p>
-              <p>
-                Please use the exact subject <strong>"PetNexa AI Account Deletion Request"</strong> and send the message from your registered account email.
-                All associated cloud accounts, database records, and stored files will be permanently purged within 30 calendar days.
-              </p>
-            </div>
-
-            <div class="step-card">
-              <div class="step-card-num">3</div>
-              <h4>Solo Mode Local Data Erasure</h4>
-              <p>
-                If you use Solo mode without a cloud account, all data resides solely on your physical device. No server deletion is necessary.
-              </p>
-              <p>
-                Go to <strong>Settings &gt; Data & Cloud Sync &gt; Tap "Clear Local Device Data" &gt; Confirm</strong> to wipe all pets, records,
-                and reminders instantly, or clear application storage in your Android/iOS system settings, or uninstall the app.
-              </p>
+            <div class="trust-actions">
+              <a class="button button-accent" href="./privacy-policy.html">Read Full Privacy Policy</a>
+              <a class="button button-secondary" href="./account-deletion.html">Account Deletion Guide</a>
             </div>
           </div>
 
-          <h3>Summary of Deleted vs Retained Data</h3>
-          <div class="info-table-container">
-            <table class="info-table">
-              <thead>
-                <tr>
-                  <th>Data Category</th>
-                  <th>Status Upon Deletion</th>
-                  <th>Technical Details</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><strong>Account & Authentication</strong></td>
-                  <td><span class="badge badge-danger">Permanently Deleted</span></td>
-                  <td>Email address, Google OAuth bindings, session credentials, and user ID removed from Supabase Auth.</td>
-                </tr>
-                <tr>
-                  <td><strong>Pet Profiles & Medical Records</strong></td>
-                  <td><span class="badge badge-danger">Permanently Deleted</span></td>
-                  <td>All pet profiles, medical histories, vaccination logs, weight records, and reminders deleted from database.</td>
-                </tr>
-                <tr>
-                  <td><strong>Cloud Media & Attachments</strong></td>
-                  <td><span class="badge badge-danger">Permanently Deleted</span></td>
-                  <td>Pet photos, medical invoices, and document scans purged from private Supabase Storage buckets (<code>petnexa-home-assets</code>).</td>
-                </tr>
-                <tr>
-                  <td><strong>Local App Database</strong></td>
-                  <td><span class="badge badge-danger">Erased</span></td>
-                  <td>Local SQLite database, SecureStore credentials, and cached storage wiped on physical device.</td>
-                </tr>
-                <tr>
-                  <td><strong>Rate-Limiting Hashes</strong></td>
-                  <td><span class="badge badge-neutral">Transient</span></td>
-                  <td>Hashed request identifiers for abuse prevention expire automatically on standard rolling timetables.</td>
-                </tr>
-              </tbody>
-            </table>
+          <div class="trust-pillars">
+            <article class="trust-pillar-card">
+              <strong>&#x1F512; Local by Default</strong>
+              <span>Medical records, notes, and weights stay inside your device SQLite database.</span>
+            </article>
+            <article class="trust-pillar-card">
+              <strong>&#x1F6E1; Zero AI Training</strong>
+              <span>Pet health inputs are never used to train Google Gemini, Groq, or foundation models.</span>
+            </article>
+            <article class="trust-pillar-card">
+              <strong>&#x1F6AB; No Data Brokers</strong>
+              <span>We never sell, rent, or trade your personal or pet health information.</span>
+            </article>
+            <article class="trust-pillar-card">
+              <strong>&#x1F4E4; Full Portability</strong>
+              <span>Export your complete health history as JSON or permanently purge your cloud account.</span>
+            </article>
           </div>
         </div>
       </section>
 
-      <!-- 12. CHILDREN'S PRIVACY -->
-      <section id="children-privacy" class="doc-section">
-        <h2>12. Children's Privacy</h2>
-        <p>
-          PetNexa AI is designed for pet owners, furparents, and caretakers who are <strong>at least 13 years old</strong>.
-        </p>
-        <p>
-          <strong>Verified Age Verification:</strong> During fresh onboarding and profile editing, the application requires the user to input
-          their date of birth. The application computes the user's age in local time and enforces a hard minimum age gate of 13 years (<code>MIN_OWNER_AGE = 13</code>).
-          Users under 13 cannot complete registration.
-        </p>
-        <p>
-          PetNexa AI does not knowingly collect, solicit, or maintain personal information from children under the age of 13.
-          If we discover that personal information from a child under 13 has been inadvertently collected, we will take immediate steps
-          to delete such information from our systems. Parents or guardians who believe their child has provided personal information may contact us at
-          <a href="mailto:leaves018@gmail.com" data-contact-link><span data-contact-email>leaves018@gmail.com</span></a>.
-        </p>
-      </section>
-
-      <!-- 13. INTERNATIONAL DATA PROCESSING -->
-      <section id="international-processing" class="doc-section">
-        <h2>13. International Data Processing</h2>
-        <p>
-          PetNexa AI is operated independently by Dahon. If you utilize online connected features (AI consultations, OCR document scanning,
-          or Household cloud synchronization), your information may be transferred to, stored, and processed on servers located in the
-          United States and other jurisdictions where our cloud infrastructure providers (Supabase Inc., Google Cloud, Groq Inc.) maintain data centers.
-        </p>
-        <p>
-          These jurisdictions may have data protection laws that differ from those of your home country. By using connected online features,
-          you acknowledge this transfer under standard contractual protections and security protocols.
-        </p>
-      </section>
-
-      <!-- 14. CHANGES TO THIS PRIVACY POLICY -->
-      <section id="policy-changes" class="doc-section">
-        <h2>14. Changes to This Privacy Policy</h2>
-        <p>
-          We may update this Privacy Policy periodically to reflect new application features, technical enhancements, or regulatory updates.
-          When changes occur, we will update the "Last Updated" date at the top of this document.
-        </p>
-        <p>
-          For material changes affecting user rights or data handling practices, notice will be provided through in-app release notes
-          (accessible in <strong>Settings &gt; About PetNexa AI &gt; Release Notes</strong>) or prominent notification prior to implementation.
-          Continued use of PetNexa AI following an update constitutes your acceptance of the revised policy.
-        </p>
-      </section>
-
-      <!-- 15. PRIVACY AND SUPPORT CONTACT -->
-      <section id="contact" class="doc-section">
-        <h2>15. Privacy and Support Contact</h2>
-        <div class="contact-card">
-          <p>If you have any questions, concerns, or requests regarding this Privacy Policy, your data, or account deletion, please contact:</p>
-          <p>
-            <strong>Developer:</strong> <span data-developer-name>Dahon</span><br />
-            <strong>Application:</strong> PetNexa AI (Android Package: <code>com.iterablueprints.petnexaai</code>)<br />
-            <strong>Portfolio:</strong> <a href="https://devdahon.github.io/portfolio/" target="_blank" rel="noopener noreferrer">https://devdahon.github.io/portfolio/</a><br />
-            <strong>Email:</strong>
-            <a href="mailto:leaves018@gmail.com" data-contact-link>
-              <span data-contact-email>leaves018@gmail.com</span>
-            </a>
+      <!-- SECTION 7: DOWNLOAD & GET STARTED -->
+      <section class="cta-section" aria-labelledby="cta-title">
+        <div class="cta-box">
+          <p class="eyebrow">
+            <span class="eyebrow-pill">Get Started Today</span>
           </p>
+          <h2 id="cta-title">Start caring for your pets with total peace of mind.</h2>
           <p>
-            For expedited routing, please use the following email subject lines:
+            Download PetNexa AI and organize your pet's complete medical history in minutes.
+            Available for Android and iOS devices.
           </p>
-          <ul>
-            <li><code>"PetNexa AI data request"</code> — For data access, export, or privacy inquiries.</li>
-            <li><code>"PetNexa AI Account Deletion Request"</code> — For manual cloud account and data deletion requests.</li>
-            <li><code>"PetNexa AI Support"</code> — For general technical assistance.</li>
-          </ul>
-          <p>We review and respond to verified privacy requests within 30 calendar days.</p>
-        </div>
-      </section>
-
-      <!-- 16. GOOGLE PLAY DATA SAFETY COMPLIANCE REFERENCE -->
-      <section id="play-data-safety" class="doc-section">
-        <h2>16. Google Play Data Safety Compliance Reference</h2>
-        <p>
-          This section provides an auditable, transparent reference mapping PetNexa AI's verified functionality to the
-          <strong>Google Play Console Data Safety</strong> questionnaire. Developers, auditors, and users can inspect our exact declarations:
-        </p>
-
-        <div class="info-table-container">
-          <table class="info-table">
-            <thead>
-              <tr>
-                <th>Google Play Data Category</th>
-                <th>Data Element</th>
-                <th>Collection Status</th>
-                <th>Sharing Status</th>
-                <th>Purpose & Handling</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>Location</strong></td>
-                <td>Approximate & Precise Location</td>
-                <td><span class="badge badge-warning">Optional</span></td>
-                <td><span class="badge badge-neutral">Not Shared</span></td>
-                <td>Collected in foreground only when using Find a Vet to search OpenStreetMap for nearby clinics. Ephemeral query; never tracked in background.</td>
-              </tr>
-              <tr>
-                <td><strong>Personal Info</strong></td>
-                <td>Name</td>
-                <td><span class="badge badge-warning">Optional</span></td>
-                <td><span class="badge badge-neutral">Not Shared</span></td>
-                <td>User-provided owner display name for personal profile identification. Stored locally (or synced to Home in Household mode).</td>
-              </tr>
-              <tr>
-                <td><strong>Personal Info</strong></td>
-                <td>Email Address</td>
-                <td><span class="badge badge-warning">Optional</span></td>
-                <td><span class="badge badge-neutral">Not Shared</span></td>
-                <td>Collected only if user chooses to sign into Household Sync via Supabase Auth for account creation and sync authorization.</td>
-              </tr>
-              <tr>
-                <td><strong>Personal Info</strong></td>
-                <td>Date of Birth / Age</td>
-                <td><span class="badge badge-teal">Collected</span></td>
-                <td><span class="badge badge-neutral">Not Shared</span></td>
-                <td>Used strictly on device to verify compliance with the minimum user age requirement of 13+.</td>
-              </tr>
-              <tr>
-                <td><strong>Photos and Videos</strong></td>
-                <td>Photos</td>
-                <td><span class="badge badge-warning">Optional</span></td>
-                <td><span class="badge badge-neutral">Not Shared</span></td>
-                <td>Pet profile avatars and health record photo attachments. Stored locally or in private Supabase Storage buckets.</td>
-              </tr>
-              <tr>
-                <td><strong>Files and Documents</strong></td>
-                <td>Files & Documents</td>
-                <td><span class="badge badge-warning">Optional</span></td>
-                <td><span class="badge badge-neutral">Not Shared</span></td>
-                <td>Scanned veterinary invoices, prescriptions, and PDF records for AI OCR extraction. Processed ephemerally over TLS.</td>
-              </tr>
-              <tr>
-                <td><strong>App Info & Performance</strong></td>
-                <td>Crash / Error Logs</td>
-                <td><span class="badge badge-warning">Optional</span></td>
-                <td><span class="badge badge-neutral">Not Shared</span></td>
-                <td>Maintained strictly on-device in a local FIFO ring buffer (max 80 events). Disabled by default. <strong>Never uploaded automatically.</strong></td>
-              </tr>
-              <tr>
-                <td><strong>Device or Other IDs</strong></td>
-                <td>Installation Identifier</td>
-                <td><span class="badge badge-teal">Collected</span></td>
-                <td><span class="badge badge-neutral">Not Shared</span></td>
-                <td>Pseudonymous installation UUID and request hash used for Edge Function rate limiting and ad requests.</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <div class="data-grid">
-          <div class="data-card">
-            <h3>Data Encryption in Transit</h3>
-            <p>All network data transmitted by PetNexa AI is encrypted over secure HTTPS / TLS 1.3 connections.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="./privacy-policy.html">Review Privacy Policy</a>
+            <a class="button button-secondary" href="./support.html">Help &amp; FAQs</a>
           </div>
-          <div class="data-card">
-            <h3>Data Deletion Mechanism</h3>
-            <p>Users can permanently delete their account and associated data directly in-app or by emailing support.</p>
-          </div>
-          <div class="data-card">
-            <h3>No Data Selling</h3>
-            <p>PetNexa AI does not sell any personal or pet health information to third-party data brokers or marketing firms.</p>
+          <div class="cta-badges">
+            <span>Compatible with Android 8.0+ &amp; iOS 15.0+</span>
+            <span>&bull;</span>
+            <span>Solo Offline Mode (No Login Required)</span>
+            <span>&bull;</span>
+            <span>Age Requirement: 13+</span>
           </div>
         </div>
       </section>
-
-      <!-- 17. TERMS OF SERVICE & CARE DISCLAIMERS -->
-      <section id="terms-of-service" class="doc-section">
-        <h2>17. Terms of Service & Care Disclaimers</h2>
-
-        <div class="terms-box">
-          <h4>Veterinary Guidance Disclaimer</h4>
-          <p>
-            PetNexa AI is designed solely for informational, organizational, and educational pet-care tracking.
-            The AI assistant and care recommendations do <strong>not</strong> constitute licensed veterinary medical advice,
-            diagnosis, treatment, or medication prescription. Always consult a qualified, licensed veterinarian for medical concerns.
-          </p>
-        </div>
-
-        <div class="terms-box">
-          <h4>Emergency Protocols</h4>
-          <p>
-            In any situation involving severe trauma, difficulty breathing, suspected poisoning, seizures, sudden collapse,
-            or rapidly worsening distress, do not wait for AI output or app notifications. Immediately transport your pet
-            to the nearest emergency veterinary hospital or contact an emergency veterinary hotline.
-          </p>
-        </div>
-
-        <div class="terms-box">
-          <h4>User Responsibility & Backup Security</h4>
-          <p>
-            Users are responsible for verifying all information imported via backups or extracted through AI document scanning.
-            Portable JSON backup files contain pet health data; store and share them only with trusted individuals.
-          </p>
-        </div>
-
-        <div class="terms-box">
-          <h4>Connectivity & Service Requirements</h4>
-          <p>
-            AI symptom consultations and OCR document scanning strictly require an active internet connection and available
-            AI credits. Features dependent on cloud sync, maps, or ads require compatible device hardware and network access.
-          </p>
-        </div>
-      </section>
-
-      <!-- FOOTER -->
-      <footer class="footer-section">
-        <div class="footer-links">
-          <a href="#main-content">Back to Top</a>
-          <a href="#introduction">Privacy Policy</a>
-          <a href="#account-deletion">Account Deletion</a>
-          <a href="#play-data-safety">Google Play Data Safety</a>
-          <a href="#terms-of-service">Terms of Service</a>
-          <a href="#contact">Contact Support</a>
-        </div>
-        <p>&copy; 2026 PetNexa AI. Developed by <span data-developer-name>Dahon</span>. All rights reserved.</p>
-      </footer>
     </main>
+
+    <!-- GLOBAL SITE FOOTER -->
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-grid">
+          <!-- Column 1: Brand -->
+          <div class="footer-brand">
+            <a class="brand" href="./index.html" aria-label="PetNexa AI home">
+              <span class="brand-logo-frame" aria-hidden="true">
+                <img src="./image.png" alt="" class="brand-logo" width="44" height="44" />
+              </span>
+              <span class="brand-copy">
+                <span class="brand-name">PetNexa AI</span>
+                <span class="brand-sub">Pet Care &amp; Safety</span>
+              </span>
+            </a>
+            <p>
+              An intelligent, privacy-first companion for pet health management, preventive care schedules,
+              and veterinary symptom triage.
+            </p>
+          </div>
+
+          <!-- Column 2: Navigation -->
+          <div class="footer-col">
+            <h4>Website</h4>
+            <ul>
+              <li><a href="./index.html">Home</a></li>
+              <li><a href="#features">Key Features</a></li>
+              <li><a href="#showcase">App Showcase</a></li>
+              <li><a href="#how-it-works">How It Works</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Legal & Safety -->
+          <div class="footer-col">
+            <h4>Legal &amp; Privacy</h4>
+            <ul>
+              <li><a href="./privacy-policy.html">Privacy Policy</a></li>
+              <li><a href="./account-deletion.html">Account &amp; Data Deletion</a></li>
+              <li><a href="./privacy-policy.html#play-data-safety">Google Play Data Safety</a></li>
+              <li><a href="./privacy-policy.html#terms-of-service">Terms of Service</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 4: Support -->
+          <div class="footer-col">
+            <h4>Support</h4>
+            <ul>
+              <li><a href="./support.html">Help Center &amp; FAQs</a></li>
+              <li><a href="./support.html#troubleshooting">Troubleshooting</a></li>
+              <li><a href="mailto:leaves018@gmail.com">Contact Support</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2026 PetNexa AI. Developed by <span data-developer-name>Dahon</span>. All rights reserved.</p>
+          <p>
+            Official Support:
+            <a href="mailto:leaves018@gmail.com" data-contact-link>leaves018@gmail.com</a>
+          </p>
+        </div>
+      </div>
+    </footer>
 
     <script src="./script.js"></script>
   </body>
