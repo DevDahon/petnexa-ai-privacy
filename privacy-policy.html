@@ -127,7 +127,7 @@
             <h2>1. Introduction &amp; Application Architecture</h2>
             <p>
               PetNexa AI is an intelligent pet health management and care companion mobile application developed and maintained by
-              <strong data-developer-name>Dahon</strong>. The application is distributed for Android (Google Play Store) and Web.
+              <strong data-developer-name>Dahon</strong>. The application is distributed exclusively for Android on the Google Play Store.
             </p>
             <p>
               The purpose of this Privacy Policy is to clearly, truthfully, and comprehensively disclose how PetNexa AI handles user information,
@@ -142,15 +142,15 @@
                 <h3>Solo Mode (Default Local-First)</h3>
                 <p>
                   When using PetNexa AI in Solo Mode, all owner profile details, pet profiles, vaccination records, weight tracking logs,
-                  medical notes, reminders, and consultation history reside exclusively on your physical device in a native SQLite database
-                  (or secure browser storage on web). No account registration, login credentials, or cloud server connections are required.
+                  medical notes, reminders, and consultation history reside exclusively on your physical device in a native SQLite database.
+                  No account registration, login credentials, or cloud server connections are required.
                   Your data remains completely under your personal physical custody.
                 </p>
               </div>
               <div class="data-card">
-                <h3>Household Sync Mode (Optional Cloud)</h3>
+                <h3>Home Furparent Sync (Optional Cloud)</h3>
                 <p>
-                  Users who wish to collaborate with family members or co-caretakers can optionally enable Household Sync. This mode connects
+                  Users who wish to collaborate with family members or co-caretakers can optionally enable Home Furparent Sync Mode. This mode connects
                   to a cloud backend hosted on Supabase (PostgreSQL with Row Level Security) via email OTP or Google OAuth authentication.
                   Selected pets, health records, reminders, and media attachments are securely synchronized among authorized members of that specific Home.
                 </p>
@@ -274,14 +274,14 @@
 
             <div class="data-grid">
               <div class="data-card">
-                <h3>Primary Model: Google Gemini 2.5 Flash</h3>
+                <h3>Primary Model: Google Gemini Flash</h3>
                 <p>
                   Used for symptom analysis and document extraction. Requests are processed ephemerally over encrypted TLS endpoints.
                   Under Google's API terms, data sent via the Gemini API is <strong>not used to train Google foundation models</strong>.
                 </p>
               </div>
               <div class="data-card">
-                <h3>Fallback Model: Groq (Llama-3.3-70b-versatile)</h3>
+                <h3>Fallback Model: Groq High-Speed Inference</h3>
                 <p>
                   If Google AI endpoints experience downtime or latency spikes, PetNexa AI seamlessly fails over to high-speed Groq inference endpoints.
                   Payloads are processed ephemerally with zero retention for model fine-tuning.
