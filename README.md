@@ -1,69 +1,103 @@
-# PetNexa AI Privacy Policy Site
+# PetNexa AI — Web & App Store Assets
 
-Plain static privacy-policy website for PetNexa AI, with a commercial app-showcase front section and a full legal privacy policy maintained independently from the Expo app runtime.
+Official public web presence and store listing asset repository for **PetNexa AI**, including the landing showcase, full legal Privacy Policy, Account Deletion portal, Help Center, and Google Play Store marketing assets.
 
-## Files
+---
 
-- `index.html`
-- `styles.css`
-- `script.js`
-- `image.png`
-- `screenshots/`
-- `capture-screenshots.mjs`
-- `app-ads.txt`
-- `robots.txt`
-- `sitemap.xml`
+## Repository Structure
 
-## Before publishing
+```
+petnexa-ai-privacy/
+├── index.html                      # Main landing page with live app showcase
+├── privacy-policy.html             # Full legal privacy policy
+├── account-deletion.html           # Dedicated account & data deletion portal
+├── support.html                    # Help center, FAQs, and support contact
+├── styles.css                      # Master design system stylesheet
+├── script.js                       # Site interactions & policy config
+├── image.png                       # Official PetNexa AI logo & brand icon
+├── live-app-preview.mp4            # Live app showcase video preview
+├── live-app-preview.webm           # WebM format for universal browser support
+├── sitemap.xml                     # Search engine sitemap
+├── robots.txt                      # Search crawler configuration
+├── app-ads.txt                     # AdMob publisher verification
+├── package.json                    # Project manifest & npm automation scripts
+│
+├── play-store-assets/              # Google Play Console phone assets (9:16)
+│   ├── 01-phone-dashboard.png      # Care Dashboard (Featured)
+│   ├── 02-phone-ai-assistant.png   # 24/7 AI Health Guidance
+│   ├── 03-phone-records.png        # Clinical Records Vault
+│   ├── 04-phone-my-pets.png        # Multi-Pet Passports
+│   ├── 05-phone-privacy-controls.png # Privacy & Local Data Control
+│   ├── 06-phone-onboarding.png     # Quick Onboarding Setup
+│   ├── index.html                  # Interactive asset preview gallery
+│   └── template.html               # 1080×1920 phone chassis render template
+│
+├── screenshots/                    # Authentic mobile app captures (demo data)
+│   ├── 01-onboarding-login.png
+│   ├── 02-dashboard.png
+│   ├── 03-my-pets.png
+│   ├── 04-records.png
+│   ├── 05-ai-assistant.png
+│   └── 06-settings-privacy-controls.png
+│
+├── scripts/                        # Developer automation & build tools
+│   ├── capture-screenshots.mjs     # Captures raw app screens via Chrome CDP
+│   └── generate-play-screenshots.mjs # Renders 9:16 Play Store promotional cards
+│
+└── privacy-policy/, account-deletion/, support/ # GitHub Pages URL redirect bridges
+```
 
-1. Update `script.js` if needed:
-   - `effectiveDate`
-   - `contactEmail`
-   - `developerName`
-2. Keep `index.html` aligned with the live app behavior, especially:
-   - Home Furparent sync through Supabase Auth, database tables, and private Storage assets
-   - AI consultation payloads sent through the Supabase/API proxy to Gemini or Groq
-   - rewarded-ad credit handling through Google Mobile Ads
-   - local backup and restore behavior
-   - session-only undo behavior for supported local delete actions
-   - Help & Support contact flow and user-exported diagnostics
-   - privacy/data request instructions and support subject lines
-   - sync status, notification status, profile completeness, and care guidance shown in the app
-   - camera/gallery photos for pet profiles and health-record attachments
-3. Keep `index.html`, `robots.txt`, and `sitemap.xml` using the same canonical production URL.
-4. Refresh screenshots after major mobile UI updates, especially Settings, Help & Support, and onboarding changes.
-5. Host this folder on a public static host.
-6. Use the final public URL wherever Google Play, app stores, or app metadata require a privacy-policy URL.
+---
 
-## Local preview
+## Quick Start & Commands
 
-Open `index.html` directly in a browser, or serve this folder with any static file server.
+### 1. Local Preview
 
-## Refresh app screenshots
+Open [`index.html`](file:///c:/Users/Dahon/Documents/Projects/petnexa-ai-privacy/index.html) directly in any browser, or run a local static server:
 
-The preview screenshots must use demo data only. Do not sign in with a real
-account or capture real pet, owner, clinic, or record data.
+```powershell
+npx serve .
+```
 
-1. Start the Expo web app:
+---
+
+### 2. Google Play Phone Screenshots (9:16)
+
+Generates 6 promotional marketing graphics ($1080 \times 1920\text{ px}$, 9:16 aspect ratio, lossless PNG, under 1 MB each) ready for direct upload to the Google Play Developer Console:
+
+```powershell
+npm run screenshots:play-store
+# or: node scripts/generate-play-screenshots.mjs
+```
+
+Outputs are saved in [`play-store-assets/`](file:///c:/Users/Dahon/Documents/Projects/petnexa-ai-privacy/play-store-assets). Preview and download all assets by opening [`play-store-assets/index.html`](file:///c:/Users/Dahon/Documents/Projects/petnexa-ai-privacy/play-store-assets/index.html).
+
+---
+
+### 3. Refresh Raw App Screenshots
+
+To re-capture the base in-app screens using demo data from the Expo local dev server:
+
+1. Start Expo web server:
    ```powershell
    npx expo start --web --port 8098
    ```
-2. Start Chrome with a temporary profile and DevTools enabled:
-   ```powershell
-   & 'C:\Program Files\Google\Chrome\Application\chrome.exe' --disable-gpu --disable-crash-reporter --disable-crashpad --no-first-run --no-default-browser-check --remote-debugging-address=127.0.0.1 --remote-debugging-port=9224 --user-data-dir="$PWD\.tmp-chrome-cdp" --window-size=430,932 about:blank
-   ```
-3. Capture the mobile screenshots:
-   ```powershell
-   node capture-screenshots.mjs
-   ```
-4. Review every image in `screenshots/` before committing:
-   - `01-onboarding-login.png`
-   - `02-dashboard.png`
-   - `03-my-pets.png`
-   - `04-records.png`
-   - `05-ai-assistant.png`
-   - `06-settings-privacy-controls.png`
 
-The capture script clears browser storage for onboarding, then injects a local
-demo snapshot for app screens. The images are informational website assets and
-do not replace the written privacy policy.
+2. Capture all mobile views via automated CDP:
+   ```powershell
+   npm run screenshots:capture
+   # or: node scripts/capture-screenshots.mjs
+   ```
+
+Screenshots are saved directly to [`screenshots/`](file:///c:/Users/Dahon/Documents/Projects/petnexa-ai-privacy/screenshots).
+
+---
+
+## Production Deployment Checklist
+
+1. **Verify Site Metadata**: Confirm `effectiveDate`, `contactEmail`, and `developerName` in [`script.js`](file:///c:/Users/Dahon/Documents/Projects/petnexa-ai-privacy/script.js).
+2. **Canonical Links**: Ensure [`sitemap.xml`](file:///c:/Users/Dahon/Documents/Projects/petnexa-ai-privacy/sitemap.xml) and canonical meta tags match the production domain (`https://devdahon.github.io/petnexa-ai-privacy/`).
+3. **Google Play Store Policy URLs**:
+   - **Privacy Policy**: `https://devdahon.github.io/petnexa-ai-privacy/privacy-policy.html`
+   - **Account Deletion**: `https://devdahon.github.io/petnexa-ai-privacy/account-deletion.html`
+   - **Support & Feedback**: `https://devdahon.github.io/petnexa-ai-privacy/support.html`

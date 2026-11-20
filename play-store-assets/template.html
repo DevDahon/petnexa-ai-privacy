@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PetNexa AI - Google Play Phone Screenshot Assets (9:16)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #0b1329;
+      color: #071b34;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 60px;
+      padding: 40px;
+    }
+
+    /* Single slide mode for capture */
+    body.capture-mode {
+      background: transparent !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      gap: 0 !important;
+      width: 1080px !important;
+      height: 1920px !important;
+      overflow: hidden !important;
+    }
+
+    .gallery-header {
+      text-align: center;
+      color: #f8fafc;
+      max-width: 800px;
+      margin-bottom: -20px;
+    }
+    .gallery-header h1 {
+      font-size: 36px;
+      font-weight: 800;
+      margin-bottom: 8px;
+      background: linear-gradient(135deg, #2dd4bf, #38bdf8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .gallery-header p {
+      font-size: 16px;
+      color: #94a3b8;
+    }
+
+    .slide-canvas {
+      width: 1080px;
+      height: 1920px;
+      min-width: 1080px;
+      min-height: 1920px;
+      max-width: 1080px;
+      max-height: 1920px;
+      position: relative;
+      overflow: hidden;
+      background: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Background Themes */
+    .theme-dashboard {
+      background: linear-gradient(180deg, #F0FDFA 0%, #E6F7F4 26%, #F8FAFC 85%);
+    }
+    .theme-ai {
+      background: linear-gradient(180deg, #F5F3FF 0%, #EEF2FF 26%, #F8FAFC 85%);
+    }
+    .theme-records {
+      background: linear-gradient(180deg, #ECFDF5 0%, #E6F8F0 26%, #F8FAFC 85%);
+    }
+    .theme-pets {
+      background: linear-gradient(180deg, #FFFBEB 0%, #FEF3C7 26%, #F8FAFC 85%);
+    }
+    .theme-privacy {
+      background: linear-gradient(180deg, #F1F5F9 0%, #E2E8F0 26%, #F8FAFC 85%);
+    }
+    .theme-onboarding {
+      background: linear-gradient(180deg, #F0FDFA 0%, #E0F2FE 26%, #F8FAFC 85%);
+    }
+
+    /* Ambient Glowing Orbs */
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      pointer-events: none;
+      z-index: 1;
+    }
+    .orb-1 {
+      top: -100px;
+      right: -100px;
+      width: 550px;
+      height: 550px;
+      background: radial-gradient(circle, rgba(35, 195, 174, 0.32) 0%, rgba(35, 195, 174, 0) 70%);
+    }
+    .orb-2 {
+      top: 200px;
+      left: -140px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(16, 185, 129, 0.22) 0%, rgba(16, 185, 129, 0) 70%);
+    }
+    .orb-ai-1 {
+      top: -120px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 750px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(99, 102, 241, 0.25) 0%, rgba(35, 195, 174, 0.15) 50%, rgba(99, 102, 241, 0) 70%);
+    }
+    .orb-records-1 {
+      top: -80px;
+      left: -100px;
+      width: 580px;
+      height: 580px;
+      background: radial-gradient(circle, rgba(16, 185, 129, 0.3) 0%, rgba(16, 185, 129, 0) 70%);
+    }
+    .orb-pets-1 {
+      top: -100px;
+      right: -120px;
+      width: 550px;
+      height: 550px;
+      background: radial-gradient(circle, rgba(245, 158, 11, 0.28) 0%, rgba(245, 158, 11, 0) 70%);
+    }
+    .orb-privacy-1 {
+      top: -100px;
+      left: -100px;
+      width: 550px;
+      height: 550px;
+      background: radial-gradient(circle, rgba(15, 118, 110, 0.28) 0%, rgba(15, 118, 110, 0) 70%);
+    }
+
+    /* Top Marketing Copy Section */
+    .slide-header {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      padding: 56px 50px 0 50px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 22px;
+      border-radius: 9999px;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 4px 14px rgba(11, 31, 51, 0.04);
+    }
+    .badge-teal {
+      background: rgba(35, 195, 174, 0.15);
+      color: #0c7568;
+      border: 1.5px solid rgba(35, 195, 174, 0.4);
+    }
+    .badge-indigo {
+      background: rgba(99, 102, 241, 0.15);
+      color: #4f46e5;
+      border: 1.5px solid rgba(99, 102, 241, 0.4);
+    }
+    .badge-emerald {
+      background: rgba(16, 185, 129, 0.15);
+      color: #047857;
+      border: 1.5px solid rgba(16, 185, 129, 0.4);
+    }
+    .badge-amber {
+      background: rgba(245, 158, 11, 0.15);
+      color: #b45309;
+      border: 1.5px solid rgba(245, 158, 11, 0.4);
+    }
+    .badge-slate {
+      background: rgba(71, 85, 105, 0.15);
+      color: #1e293b;
+      border: 1.5px solid rgba(71, 85, 105, 0.4);
+    }
+
+    .headline {
+      font-size: 50px;
+      font-weight: 800;
+      line-height: 1.16;
+      letter-spacing: -1.2px;
+      color: #071b34;
+      margin-bottom: 12px;
+      max-width: 960px;
+    }
+    .highlight-teal {
+      background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .highlight-indigo {
+      background: linear-gradient(135deg, #6366f1 0%, #4338ca 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .highlight-emerald {
+      background: linear-gradient(135deg, #059669 0%, #047857 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .highlight-amber {
+      background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+      font-size: 25px;
+      font-weight: 500;
+      line-height: 1.36;
+      color: #475569;
+      max-width: 920px;
+    }
+
+    /* Perfectly Contained Floating Handset Frame */
+    .mockup-container {
+      position: absolute;
+      top: 320px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 710px;
+      height: 1530px;
+      z-index: 2;
+    }
+
+    .device-shell {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      background: #0f172a;
+      border-radius: 56px;
+      padding: 14px;
+      box-shadow: 
+        0 35px 80px -15px rgba(7, 27, 52, 0.32),
+        0 18px 40px -10px rgba(35, 195, 174, 0.22),
+        0 0 0 1px rgba(255, 255, 255, 0.4) inset,
+        0 0 0 3px rgba(15, 23, 42, 0.85);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .device-screen-wrapper {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      background: #ffffff;
+      border-radius: 42px;
+      overflow: hidden;
+    }
+
+    .screenshot-img {
+      width: 100%;
+      height: 100%;
+      object-fit: fill;
+      display: block;
+      border-radius: 42px;
+    }
+
+    .screen-glare {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0) 50%);
+      pointer-events: none;
+      z-index: 5;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="gallery-header" id="gallery-header">
+    <h1>PetNexa AI — Google Play Phone Screenshots</h1>
+    <p>Standard 9:16 Aspect Ratio (1080 × 1920 px) • Formatted for Google Play Console</p>
+  </div>
+
+  <!-- SLIDE 1: DASHBOARD -->
+  <div id="slide-1" class="slide-canvas theme-dashboard">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <header class="slide-header">
+      <div class="badge-pill badge-teal">
+        <span>✨ All-in-One Pet Care</span>
+      </div>
+      <h1 class="headline">Smart Pet Care, <span class="highlight-teal">Simplified</span></h1>
+      <p class="subtitle">Daily routine reminders, wellness stats, and priority care tasks in one tap.</p>
+    </header>
+    <div class="mockup-container">
+      <div class="device-shell">
+        <div class="device-screen-wrapper">
+          <div class="screen-glare"></div>
+          <img class="screenshot-img" src="../screenshots/02-dashboard.png" alt="PetNexa AI Care Dashboard">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 2: AI ASSISTANT -->
+  <div id="slide-2" class="slide-canvas theme-ai">
+    <div class="orb orb-ai-1"></div>
+    <header class="slide-header">
+      <div class="badge-pill badge-indigo">
+        <span>🤖 24/7 AI Triage</span>
+      </div>
+      <h1 class="headline">Personalized <span class="highlight-indigo">AI Guidance</span></h1>
+      <p class="subtitle">Check symptoms early with smart guidance before heading to the clinic.</p>
+    </header>
+    <div class="mockup-container">
+      <div class="device-shell">
+        <div class="device-screen-wrapper">
+          <div class="screen-glare"></div>
+          <img class="screenshot-img" src="../screenshots/05-ai-assistant.png" alt="PetNexa AI Symptom Assistant">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 3: CLINICAL RECORDS -->
+  <div id="slide-3" class="slide-canvas theme-records">
+    <div class="orb orb-records-1"></div>
+    <header class="slide-header">
+      <div class="badge-pill badge-emerald">
+        <span>📋 Clinical Vault</span>
+      </div>
+      <h1 class="headline">Complete <span class="highlight-emerald">Medical Records</span></h1>
+      <p class="subtitle">Track vaccines, deworming, vet notes, and scan papers with AI OCR.</p>
+    </header>
+    <div class="mockup-container">
+      <div class="device-shell">
+        <div class="device-screen-wrapper">
+          <div class="screen-glare"></div>
+          <img class="screenshot-img" src="../screenshots/04-records.png" alt="PetNexa AI Clinical Records Vault">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 4: MY PETS -->
+  <div id="slide-4" class="slide-canvas theme-pets">
+    <div class="orb orb-pets-1"></div>
+    <header class="slide-header">
+      <div class="badge-pill badge-amber">
+        <span>🐾 Multi-Pet Passports</span>
+      </div>
+      <h1 class="headline">Profiles for <span class="highlight-amber">Every Pet</span></h1>
+      <p class="subtitle">Organize dogs and cats with breed milestones, weights, and microchips.</p>
+    </header>
+    <div class="mockup-container">
+      <div class="device-shell">
+        <div class="device-screen-wrapper">
+          <div class="screen-glare"></div>
+          <img class="screenshot-img" src="../screenshots/03-my-pets.png" alt="PetNexa AI Multi-Pet Profiles">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 5: PRIVACY CONTROLS -->
+  <div id="slide-5" class="slide-canvas theme-privacy">
+    <div class="orb orb-privacy-1"></div>
+    <header class="slide-header">
+      <div class="badge-pill badge-slate">
+        <span>🛡️ Privacy First</span>
+      </div>
+      <h1 class="headline">Your Data <span class="highlight-teal">Stays Private</span></h1>
+      <p class="subtitle">Solo offline mode, local storage, full JSON export, and zero data selling.</p>
+    </header>
+    <div class="mockup-container">
+      <div class="device-shell">
+        <div class="device-screen-wrapper">
+          <div class="screen-glare"></div>
+          <img class="screenshot-img" src="../screenshots/06-settings-privacy-controls.png" alt="PetNexa AI Privacy Controls">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 6: ONBOARDING -->
+  <div id="slide-6" class="slide-canvas theme-onboarding">
+    <div class="orb orb-1"></div>
+    <header class="slide-header">
+      <div class="badge-pill badge-teal">
+        <span>⚡ Quick Setup</span>
+      </div>
+      <h1 class="headline">Ready in <span class="highlight-teal">Under 60 Seconds</span></h1>
+      <p class="subtitle">Intuitive onboarding designed for calm, confident pet health management.</p>
+    </header>
+    <div class="mockup-container">
+      <div class="device-shell">
+        <div class="device-screen-wrapper">
+          <div class="screen-glare"></div>
+          <img class="screenshot-img" src="../screenshots/01-onboarding-login.png" alt="PetNexa AI Onboarding Setup">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const slideParam = params.get('slide');
+    if (slideParam) {
+      document.body.classList.add('capture-mode');
+      const header = document.getElementById('gallery-header');
+      if (header) header.style.display = 'none';
+
+      document.querySelectorAll('.slide-canvas').forEach(slide => {
+        if (slide.id === `slide-${slideParam}`) {
+          slide.style.display = 'flex';
+        } else {
+          slide.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>

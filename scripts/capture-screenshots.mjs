@@ -2,8 +2,8 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import { spawn } from "node:child_process";
 
-const ROOT = import.meta.dirname;
-const OUT_DIR = path.join(import.meta.dirname, "screenshots");
+const ROOT = path.resolve(import.meta.dirname, "..");
+const OUT_DIR = path.join(ROOT, "screenshots");
 const BASE_URL = process.env.PETNEXA_SCREENSHOT_URL || "http://localhost:8098";
 const CDP_PORT = process.env.PETNEXA_CHROME_CDP_PORT || "9224";
 const CDP_BASE = `http://127.0.0.1:${CDP_PORT}`;

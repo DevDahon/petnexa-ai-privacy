@@ -1,0 +1,19 @@
+{
+  "name": "petnexa-ai-privacy",
+  "version": "1.0.6",
+  "description": "PetNexa AI — Official Privacy Policy, Support, Account Deletion & Play Store Assets",
+  "type": "module",
+  "scripts": {
+    "screenshots:capture": "node scripts/capture-screenshots.mjs",
+    "screenshots:play-store": "node scripts/generate-play-screenshots.mjs"
+  },
+  "keywords": [
+    "petnexa-ai",
+    "privacy-policy",
+    "pet-care",
+    "play-store-assets"
+  ],
+  "author": "DevDahon",
+  "license": "UNLICENSED",
+  "private": true
+}

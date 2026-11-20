@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PetNexa AI — Google Play Phone Screenshots Gallery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      background: #090f1d;
+      color: #f1f5f9;
+      padding: 40px 24px;
+      min-height: 100vh;
+    }
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .badge {
+      display: inline-block;
+      padding: 6px 16px;
+      background: rgba(45, 212, 191, 0.15);
+      border: 1px solid rgba(45, 212, 191, 0.4);
+      color: #2dd4bf;
+      border-radius: 9999px;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    h1 {
+      font-size: 38px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: 12px;
+      background: linear-gradient(135deg, #f8fafc 0%, #cbd5e1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    p.lead {
+      font-size: 18px;
+      color: #94a3b8;
+      max-width: 750px;
+      margin: 0 auto 24px auto;
+      line-height: 1.5;
+    }
+    .specs-card {
+      display: inline-flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 24px;
+      background: rgba(30, 41, 59, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 16px 28px;
+      margin: 0 auto 40px auto;
+    }
+    .spec-item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      text-align: left;
+    }
+    .spec-item span:first-child {
+      font-size: 12px;
+      text-transform: uppercase;
+      color: #64748b;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+    .spec-item span:last-child {
+      font-size: 15px;
+      font-weight: 700;
+      color: #38bdf8;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 32px;
+    }
+    .card {
+      background: #111a2e;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 20px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(45, 212, 191, 0.4);
+    }
+    .img-wrap {
+      background: #0b1329;
+      position: relative;
+      aspect-ratio: 9 / 16;
+      width: 100%;
+      overflow: hidden;
+    }
+    .img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .card-body {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .card-tag {
+      font-size: 12px;
+      font-weight: 700;
+      color: #2dd4bf;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    .card-title {
+      font-size: 19px;
+      font-weight: 700;
+      color: #f8fafc;
+    }
+    .card-desc {
+      font-size: 14px;
+      color: #94a3b8;
+      line-height: 1.4;
+      flex-grow: 1;
+    }
+    .card-footer {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      color: #64748b;
+    }
+    .btn-download {
+      color: #38bdf8;
+      text-decoration: none;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .btn-download:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <span class="badge">Google Play Store Ready</span>
+      <h1>PetNexa AI — Phone Screenshot Assets</h1>
+      <p class="lead">
+        Optimized, high-definition promotional marketing cards generated directly from mobile screenshots. Formatted specifically to meet all Google Play Console specifications.
+      </p>
+
+      <div class="specs-card">
+        <div class="spec-item">
+          <span>Aspect Ratio</span>
+          <span>9 : 16</span>
+        </div>
+        <div class="spec-item">
+          <span>Dimensions</span>
+          <span>1080 × 1920 px</span>
+        </div>
+        <div class="spec-item">
+          <span>Format</span>
+          <span>PNG (Lossless)</span>
+        </div>
+        <div class="spec-item">
+          <span>Max Allowed Size</span>
+          <span>8 MB (Actual: ~450 KB)</span>
+        </div>
+        <div class="spec-item">
+          <span>Total Assets</span>
+          <span>6 Screens (Allowed: 2–8)</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="gallery-grid">
+      <!-- 1 -->
+      <div class="card">
+        <div class="img-wrap">
+          <img src="./01-phone-dashboard.png" alt="Care Dashboard" loading="lazy">
+        </div>
+        <div class="card-body">
+          <span class="card-tag">Screenshot 1 • Featured</span>
+          <h2 class="card-title">Care Dashboard</h2>
+          <p class="card-desc">Daily routine reminders, wellness stats, and priority care tasks in one tap.</p>
+          <div class="card-footer">
+            <span>1080 × 1920 • 529 KB</span>
+            <a class="btn-download" href="./01-phone-dashboard.png" download>Download PNG ↓</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="card">
+        <div class="img-wrap">
+          <img src="./02-phone-ai-assistant.png" alt="AI Symptom Assistant" loading="lazy">
+        </div>
+        <div class="card-body">
+          <span class="card-tag">Screenshot 2 • AI Guidance</span>
+          <h2 class="card-title">AI Symptom Assistant</h2>
+          <p class="card-desc">Personalized AI guidance to evaluate symptoms before clinic visits.</p>
+          <div class="card-footer">
+            <span>1080 × 1920 • 410 KB</span>
+            <a class="btn-download" href="./02-phone-ai-assistant.png" download>Download PNG ↓</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="card">
+        <div class="img-wrap">
+          <img src="./03-phone-records.png" alt="Clinical Records Vault" loading="lazy">
+        </div>
+        <div class="card-body">
+          <span class="card-tag">Screenshot 3 • Medical Vault</span>
+          <h2 class="card-title">Clinical Records Vault</h2>
+          <p class="card-desc">Track vaccines, deworming, vet notes, and scan clinic papers with AI OCR.</p>
+          <div class="card-footer">
+            <span>1080 × 1920 • 429 KB</span>
+            <a class="btn-download" href="./03-phone-records.png" download>Download PNG ↓</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="card">
+        <div class="img-wrap">
+          <img src="./04-phone-my-pets.png" alt="Multi-Pet Profiles" loading="lazy">
+        </div>
+        <div class="card-body">
+          <span class="card-tag">Screenshot 4 • Family Registry</span>
+          <h2 class="card-title">Multi-Pet Profiles</h2>
+          <p class="card-desc">Organize dogs and cats with breed milestones, weights, and microchips.</p>
+          <div class="card-footer">
+            <span>1080 × 1920 • 334 KB</span>
+            <a class="btn-download" href="./04-phone-my-pets.png" download>Download PNG ↓</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5 -->
+      <div class="card">
+        <div class="img-wrap">
+          <img src="./05-phone-privacy-controls.png" alt="Privacy & Data Controls" loading="lazy">
+        </div>
+        <div class="card-body">
+          <span class="card-tag">Screenshot 5 • Privacy & Sync</span>
+          <h2 class="card-title">Privacy & Data Controls</h2>
+          <p class="card-desc">Solo offline mode, local storage, full JSON export, and zero data selling.</p>
+          <div class="card-footer">
+            <span>1080 × 1920 • 408 KB</span>
+            <a class="btn-download" href="./05-phone-privacy-controls.png" download>Download PNG ↓</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6 -->
+      <div class="card">
+        <div class="img-wrap">
+          <img src="./06-phone-onboarding.png" alt="Quick Onboarding Setup" loading="lazy">
+        </div>
+        <div class="card-body">
+          <span class="card-tag">Screenshot 6 • Onboarding</span>
+          <h2 class="card-title">Quick Onboarding Setup</h2>
+          <p class="card-desc">Intuitive onboarding designed for calm, confident pet health management.</p>
+          <div class="card-footer">
+            <span>1080 × 1920 • 498 KB</span>
+            <a class="btn-download" href="./06-phone-onboarding.png" download>Download PNG ↓</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
